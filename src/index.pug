@@ -1,10 +1,10 @@
 html 
-    head 
-        link(href='css/style.min.css')
+    include html/head
     body 
         include html/header 
         main.page 
-            h1 Hello! 
-            img(src='@img/img1.jpg')
+            header 
+            span Testing
+                img(src='@img/img1.jpg' width='200px')
         include html/footer
         script(src='js/app.min.js')
