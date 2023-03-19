@@ -1,22 +1,21 @@
 @import "fonts";
 
 body {
-  font-family: georgiai;
-  background-color: #000;
-  span {
-    color: red;
-  }
-  //   background: url("@img/img1.jpg") 0 0 no-repeat;
+    background-color: #8c8b8b;
+    span {
+        color: red;
+    }
+    //   background: url("@img/img1.jpg") 0 0 no-repeat;
 }
 
 @media (max-width: 768px) {
-  span {
-    font-size: 20px;
-  }
+    span {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 768px) {
-  body {
-    background-color: green;
-  }
+    body {
+        background-color: green;
+    }
 }
