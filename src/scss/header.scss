@@ -1,0 +1,49 @@
+@import "defaults";
+
+.header {
+    // .header__menu
+
+    &__menu {
+        background-color: aliceblue;
+        $headerMaxWidth: 103.2;
+        max-width: $headerMaxWidth + rem;
+        @media (max-width: ($headerMaxWidth+rem)) {
+            max-width: 97rem;
+        }
+        @media (max-width: ($md2+rem)) {
+            max-width: $maxWidthContainer + rem;
+        }
+        @media (max-width: ($md3+rem)) {
+            max-width: 76.8rem;
+        }
+        @media (max-width: ($md4+rem)) {
+            max-width: 48rem;
+            padding: 0 10px;
+        }
+    }
+}
+.menu {
+    // .menu__icon
+
+    &__icon {
+    }
+
+    // .menu__body
+
+    &__body {
+    }
+
+    // .menu__list
+
+    &__list {
+        display: flex;
+        gap: 3.3rem;
+    }
+
+    // .menu__link
+
+    &__link {
+    }
+}
+.icon-menu {
+}

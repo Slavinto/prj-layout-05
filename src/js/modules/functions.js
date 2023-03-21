@@ -1,15 +1,11 @@
 export function isWebp() {
-  function testWebP(callback) {
-    let webP = new Image();
-    webP.onload = webP.onerror = function () {
-      callback(webP.height == 2);
-    };
-    webP.src = "data:image/webp";
-  }
+    var elem = document.createElement("canvas");
 
-  testWebP(function (support) {
-    let className = "webp";
-    // let className = support === true ? "webp" : "no-webp";
-    document.documentElement.classList.add(className);
-  });
+    if (!!(elem.getContext && elem.getContext("2d"))) {
+        // was able or not to get WebP representation
+        return elem.toDataURL("image/webp").indexOf("data:image/webp") == 0;
+    } else {
+        // very old browser like IE 8, canvas not supported
+        return false;
+    }
 }

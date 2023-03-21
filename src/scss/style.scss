@@ -1,12 +1,6 @@
-@import "fonts";
+@import "defaults", "header";
 
-body {
-    background-color: #8c8b8b;
-    span {
-        color: red;
-    }
-    //   background: url("@img/img1.jpg") 0 0 no-repeat;
-}
+// Variables
 
 @media (max-width: 768px) {
     span {
@@ -15,7 +9,4 @@ body {
 }
 
 @media (max-width: 768px) {
-    body {
-        background-color: green;
-    }
 }

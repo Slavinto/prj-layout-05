@@ -1,0 +1,87 @@
+@import "fonts", "colors";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.8rem rgba(134, 149, 164, 0.5);
+}
+
+html {
+    /* decreases default root element font size to 10px from 16px */
+    font-size: 62.5%;
+}
+
+// Default font-family
+$fontFamily: "Heebo";
+
+body {
+    ul {
+        list-style-type: none;
+    }
+    font-family: $fontFamily, sans-serif;
+    line-height: 1;
+    font-weight: 400;
+    color: $cDark;
+}
+
+/*===========================================*/
+
+/*===========================================*/
+// Variables
+$minWidth: 32rem;
+$maxWidth: 115.2;
+// Main content area width
+$maxWidthContainer: 85.6;
+// =======================
+$md1: 99.2;
+$md2: $maxWidthContainer + 1.2;
+$md3: 76.8;
+$md4: 48;
+
+/*===========================================*/
+// Media Queries
+
+/*===========================================*/
+// Default styling classes
+._centered {
+    margin: 0 auto;
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    &._loaded {
+    }
+}
+
+// Main adaptive container
+._container {
+    max-width: $maxWidthContainer + rem;
+    @media (max-width: ($md1 + rem,)) {
+        max-width: 97rem;
+    }
+    @media (max-width: ($md2+rem)) {
+        max-width: maxWidthContainer + rem;
+    }
+    @media (max-width: ($md3+rem)) {
+        max-width: 76.8rem;
+    }
+    @media (max-width: ($md4+rem)) {
+        max-width: 48rem;
+        padding: 0 10px;
+    }
+}
+/*===========================================*/
+
+/*===========================================*/
+/*===========================================*/
+/*===========================================*/
+/*===========================================*/
