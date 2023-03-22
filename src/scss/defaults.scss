@@ -1,5 +1,22 @@
 @import "fonts", "colors";
 
+/*===========================================*/
+// Variables
+/*===========================================*/
+$minWidth: 320px;
+$maxWidth: 1152;
+// Main content area width
+$maxWidthContainer: 856;
+// Header menu width
+$headerMaxWidth: 1032;
+
+// =======================
+$md1: $maxWidthContainer + 12;
+$md2: 992;
+$md3: 768;
+$md4: 480;
+/*===========================================*/
+
 * {
     margin: 0;
     padding: 0;
@@ -13,7 +30,22 @@
 
 html {
     /* decreases default root element font size to 10px from 16px */
-    font-size: 62.5%;
+    // font-size: 62.5%;
+
+    font-size: calc(10 / 16) * 100% !important;
+
+    // @media (max-width: ($md2+px)) {
+    //     font-size: calc(11 / 16) * 100%;
+    // }
+    @media (max-width: ($md1 + px)) {
+        font-size: calc(10 / 16) * 100% !important;
+    }
+    @media (max-width: ($md3+px)) {
+        font-size: calc(9 / 16) * 100% !important;
+    }
+    @media (max-width: ($md4+px)) {
+        font-size: calc(8 / 16) * 100% !important;
+    }
 }
 
 // Default font-family
@@ -22,6 +54,9 @@ $fontFamily: "Heebo";
 body {
     ul {
         list-style-type: none;
+    }
+    a {
+        text-decoration: none;
     }
     font-family: $fontFamily, sans-serif;
     line-height: 1;
@@ -32,19 +67,11 @@ body {
 /*===========================================*/
 
 /*===========================================*/
-// Variables
-$minWidth: 32rem;
-$maxWidth: 115.2;
-// Main content area width
-$maxWidthContainer: 85.6;
-// =======================
-$md1: 99.2;
-$md2: $maxWidthContainer + 1.2;
-$md3: 76.8;
-$md4: 48;
-
-/*===========================================*/
-// Media Queries
+// Text styles
+._text {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+}
 
 /*===========================================*/
 // Default styling classes
@@ -58,24 +85,27 @@ $md4: 48;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    &._loaded {
-    }
+    // &._loaded {
+    // }
 }
 
 // Main adaptive container
 ._container {
-    max-width: $maxWidthContainer + rem;
-    @media (max-width: ($md1 + rem,)) {
-        max-width: 97rem;
+    max-width: $maxWidth + px;
+
+    @media (max-width: ($md1 + px)) {
+        max-width: $maxWidthContainer + px;
     }
-    @media (max-width: ($md2+rem)) {
-        max-width: maxWidthContainer + rem;
+    @media (max-width: ($maxWidth+px)) {
+        max-width: 970px;
     }
-    @media (max-width: ($md3+rem)) {
-        max-width: 76.8rem;
+    @media (max-width: ($md2+px)) {
+        max-width: 768px;
     }
-    @media (max-width: ($md4+rem)) {
-        max-width: 48rem;
+    @media (max-width: ($md3+px)) {
+        max-width: $md4 + px;
+    }
+    @media (max-width: ($md4+px)) {
         padding: 0 10px;
     }
 }

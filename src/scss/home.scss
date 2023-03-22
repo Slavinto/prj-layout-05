@@ -1,0 +1,50 @@
+.greeting {
+    // .greeting__container
+
+    &__container {
+        display: flex;
+    }
+
+    // .greeting__article
+
+    &__article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .greeting__author-avatar
+
+    &__author-avatar {
+        width: 23rem;
+        height: 23rem;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+.avatar {
+    transform: scale(110%);
+    width: 23rem;
+    height: 23rem;
+    object-position: -1px -1px;
+    border-radius: 50%;
+}
+
+.article {
+    // .article__header
+
+    &__header {
+        font-weight: 700;
+        font-size: 4.4rem;
+        line-height: 6rem;
+    }
+
+    // .article__text
+
+    &__text {
+    }
+
+    // .article__link
+
+    &__link {
+    }
+}
