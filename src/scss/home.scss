@@ -2,37 +2,63 @@
     // .greeting__container
 
     &__container {
+        padding-top: 8rem;
         display: flex;
+        gap: 11rem;
+        align-self: center;
+        @media (max-width: ($md3+px)) {
+            padding-top: 0;
+            flex-direction: column;
+            gap: 3.4rem;
+        }
     }
 
     // .greeting__article
 
     &__article {
+        padding-top: 6rem;
+        flex-grow: 0;
         display: flex;
         flex-direction: column;
+        gap: 3.1rem;
+        @media (max-width: ($md3+px)) {
+            padding: 0 1.4rem;
+            align-items: center;
+        }
     }
 
     // .greeting__author-avatar
 
     &__author-avatar {
-        width: 23rem;
-        height: 23rem;
-        border-radius: 50%;
-        object-fit: cover;
+        padding-top: 4.4rem;
+        @media (max-width: ($md3+px)) {
+            padding-top: 3.6rem;
+            order: -1;
+            align-self: center;
+        }
+        position: relative;
+        // padding: 0 0 2rem 2rem;
     }
 }
 .avatar {
-    transform: scale(110%);
-    width: 23rem;
-    height: 23rem;
-    object-position: -1px -1px;
+    width: 24rem;
+    height: 24rem;
+    object-fit: none;
+    border: none;
     border-radius: 50%;
+    box-shadow: -0.4rem 1.1rem 0 0 #edf7fa;
 }
-
+.avatar {
+    position: relative;
+    z-index: 0;
+}
 .article {
     // .article__header
 
     &__header {
+        @media (max-width: ($md3+px)) {
+            text-align: center;
+        }
         font-weight: 700;
         font-size: 4.4rem;
         line-height: 6rem;
@@ -41,10 +67,35 @@
     // .article__text
 
     &__text {
+        max-width: 49.7rem;
+
+        @media (max-width: ($md3+px)) {
+            text-align: center;
+        }
     }
 
     // .article__link
 
     &__link {
+        &:link,
+        &:visited {
+            @media (max-width: ($md3+px)) {
+                align-self: center;
+            }
+            align-self: flex-start;
+            background-color: $cPrimary;
+            cursor: pointer;
+            padding: 0.9rem 2.1rem;
+            border-radius: 2px;
+            font-weight: 500;
+            font-size: 2rem;
+            line-height: 2.9rem;
+            color: #fff;
+            transition: all 0.4s;
+        }
+        &:hover,
+        &:active {
+            background-color: $cPrimaryShade1;
+        }
     }
 }

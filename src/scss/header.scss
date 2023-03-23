@@ -4,13 +4,11 @@
     // .header__menu
 
     &__menu {
-        // background-color: aliceblue;
-        max-width: $headerMaxWidth + 10 + px;
+        align-self: flex-end;
         padding: 0 1rem;
         display: flex;
+        flex: 1 0 8.7rem;
         align-items: center;
-        justify-content: flex-end;
-        height: 8.7rem;
         @media (max-width: ($md3+px)) {
             height: 5rem;
         }
@@ -22,12 +20,14 @@
     &__icon {
         display: none;
         @media (max-width: ($md3+px)) {
+            transform: scale(1.4);
             display: block;
             position: absolute;
-            top: 1.8rem;
-            right: 2rem;
+            top: 3.6rem;
+            right: 4rem;
             width: 3rem;
             height: 1.8rem;
+            z-index: 10;
             cursor: pointer;
             span {
                 transition: all 0.3s ease 0s;

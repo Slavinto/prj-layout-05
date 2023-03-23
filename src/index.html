@@ -2,34 +2,32 @@
 <html lang="en">
     @@include('./html/head.html', { "title": "Main Page" })
     <body>
-        <div class="wrapper">
+        <div class="wrapper _centered">
             @@include('./html/header.html', {})
-            <main>
-                <section class="greeting__container _container _centered">
-                    <article class="greeting__article">
-                        <h1 class="article__header">
-                            Hi, I am John, <br />
-                            Creative Technologist
-                        </h1>
-                        <p class="article__text _text">
-                            Amet minim mollit non deserunt ullamco est sit
-                            aliqua dolor do amet sint. Velit officia consequat
-                            duis enim velit mollit. Exercitation veniam
-                            consequat sunt nostrud amet.
-                        </p>
-                        <a href="#" class="article__link _btn-main"
-                            >Download Resume</a
-                        >
-                    </article>
-                    <div class="greeting__author-avatar">
-                        <img
-                            class="avatar"
-                            src="@img/author.jpg"
-                            alt="smiling man"
-                        />
-                    </div>
-                </section>
-            </main>
+            <section class="greeting__container _container">
+                <article class="greeting__article">
+                    <h1 class="article__header">
+                        Hi, I am John, <br />
+                        Creative Technologist
+                    </h1>
+                    <p class="article__text _text">
+                        Amet minim mollit non deserunt ullamco est sit aliqua
+                        dolor do amet sint. Velit officia consequat duis enim
+                        velit mollit. Exercitation veniam consequat sunt nostrud
+                        amet.
+                    </p>
+                    <a href="#" class="article__link _btn-main"
+                        >Download Resume</a
+                    >
+                </article>
+                <figure class="greeting__author-avatar">
+                    <img
+                        class="avatar"
+                        src="@img/author.jpg"
+                        alt="smiling man"
+                    />
+                </figure>
+            </section>
             @@include('./html/footer.html', {})
         </div>
         <script src="js/app.min.js"></script>
