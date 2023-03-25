@@ -6,7 +6,8 @@
     // .greeting__container
 
     &__container {
-        padding-top: 8rem;
+        padding: 8rem 0 7rem 0;
+        // padding-bottom: 7rem;
         display: flex;
         gap: 11rem;
         align-self: center;
@@ -115,6 +116,12 @@
     // .recent-posts__container
     background-color: #edf7fa;
     &__container {
+        @media (max-width: ($md3+px)) {
+            padding: 0 4rem;
+        }
+        @media (max-width: ($md4+px)) {
+            padding: 0 5rem;
+        }
     }
 
     // .recent-posts__header
@@ -122,6 +129,7 @@
     &__header {
         display: flex;
         justify-content: space-between;
+        align-items: center;
     }
 
     // .recent-posts__title
@@ -152,21 +160,43 @@
     // .recent-posts__items
 
     &__items {
+        padding-bottom: 3.2rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        @media (max-width: ($md3+px)) {
+            flex-direction: column;
+        }
     }
 
     // .recent-posts__item
 
     &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+        padding: 2.4rem 2rem 3rem 2.4rem;
+        background-color: #fff;
+        max-width: 50%;
+        border-radius: 4px;
+        @media (max-width: ($md3+px)) {
+            max-width: 100%;
+        }
     }
 }
 
 .recent-post {
+    transition: all 0.3s;
+    &:hover,
+    &:active {
+        box-shadow: 0px 4px 10px rgba(187, 225, 250, 0.25);
+    }
     // .recent-post__title
-
     &__title {
         font-weight: 700;
         font-size: 2.6rem;
         line-height: 3.8rem;
+        padding-bottom: 0.8rem;
         transition: color 0.3s;
         &:link,
         &:visited {
@@ -181,9 +211,140 @@
     // .recent-post__info
 
     &__info {
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 2.6rem;
+        span {
+            display: inline-block;
+            transform: scale(1, 1.5);
+            padding: 0 1.4rem;
+            @media (max-width: ($md3+px)) {
+                transform: scale(1, 1.1);
+                padding: 0 1.1rem;
+            }
+        }
     }
 
     // .recent-post__text
+
+    &__text {
+    }
+}
+// =====================================================
+// Section Featured Works
+// =====================================================
+.featured-works {
+    padding-bottom: 6rem;
+    // .featured-works__container
+
+    &__container {
+    }
+
+    // .featured-works__header
+
+    &__header {
+    }
+
+    // .featured-works__title
+
+    &__title {
+        font-weight: 400;
+        font-size: 2.2rem;
+        padding: 4rem 0;
+    }
+
+    // .featured-works__items
+
+    &__items {
+        @media (max-width: ($md3+px)) {
+            width: 33.9rem;
+        }
+    }
+
+    // .featured-works__item
+
+    &__item {
+        display: flex;
+        gap: 1.8rem;
+        align-items: flex-start;
+        padding-bottom: 2.4rem;
+        @media (max-width: ($md3+px)) {
+            flex-direction: column;
+        }
+    }
+
+    // .featured-works__divider
+
+    &__divider {
+        padding-bottom: 2.4rem;
+        hr {
+            height: 1px;
+            background-color: #e0e0e0;
+            border: none;
+        }
+    }
+}
+
+.featured-work {
+    // .featured-work__picture
+
+    &__picture {
+        flex: 0 0 24.6rem;
+    }
+
+    // .featured-work__image
+
+    &__image {
+        border-radius: 6px;
+    }
+
+    // .featured-work__description
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 2.7rem;
+    }
+}
+.description {
+    // .description__title
+
+    &__title {
+        font-weight: 700;
+        font-size: 3rem;
+        @media (max-width: ($md3+px)) {
+            padding-top: 2rem;
+        }
+    }
+
+    // .description__info
+
+    &__info {
+    }
+
+    // .description__year-tag
+
+    &__year-tag {
+        display: inline;
+        color: #fff;
+        padding: 0 0.7rem 0 1rem;
+        font-weight: 900;
+        font-size: 1.8rem;
+        background-color: #142850;
+        border-radius: 1.6rem;
+    }
+
+    // .description__category
+
+    &__category {
+        display: inline;
+        padding-left: 2.6rem;
+        color: #8695a4;
+        font-weight: 400;
+        font-size: 2rem;
+    }
+
+    // .description__text
 
     &__text {
     }

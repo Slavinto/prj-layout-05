@@ -96,6 +96,14 @@ body {
     // }
 }
 
+// adaptive image
+._adaptive {
+    width: 100%;
+    height: 100%;
+    object-position: 0 0;
+    object-fit: cover;
+}
+
 // Main adaptive container
 ._container {
     max-width: $maxWidthContainer + px;
