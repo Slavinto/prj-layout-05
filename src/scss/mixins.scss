@@ -1,0 +1,96 @@
+// To quickly centre a block element without having to worry about if there is any top or bottom margin already applied.
+
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+// center a block vertically
+@mixin vertical-center {
+    position: relative;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+// A massive time saver! You can just use pixel values but we have some default breakpoints setup that work too, another time saver while keeping your breakpoints consistent.
+
+// $breakpoints: (
+//     "phone": 400px,
+//     "phone-wide": 480px,
+//     "phablet": 560px,
+//     "tablet-small": 640px,
+//     "tablet": 768px,
+//     "tablet-wide": 1024px,
+//     "desktop": 1248px,
+//     "desktop-wide": 1440px,
+// );
+
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin truncate($truncation-boundary) {
+    max-width: $truncation-boundary;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin create-responsive-image($curwidth: 32) {
+    // $curwidth - original mobile width
+
+    // 1st breakpoint divided by initial mobile-first size
+    $ratio: $phoneRem / $curwidth;
+
+    width: $curwidth + rem;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+
+    @include mq(phone) {
+        //400px
+        min-width: $curwidth * $ratio + rem;
+    }
+    @include mq(phone-wide) {
+        //480px
+        min-width: $phoneRem * $ratio + rem;
+    }
+    @include mq(phablet) {
+        //560px
+        min-width: $phone-wideRem * $ratio + rem;
+    }
+    /*
+    @include mq(tablet-small) {
+        //640px
+        min-width: $phabletRem * $ratio + rem;
+    }
+    @include mq(tablet) {
+        //768px
+        min-width: $tablet-smallRem * $ratio + rem;
+    }
+    @include mq(tablet-wide) {
+        //1024px
+        min-width: $tabletRem * $ratio + rem;
+    }
+    @include mq(desktop) {
+        //1248px
+        min-width: $tablet-wideRem * $ratio + rem;
+    }
+    @include mq(desktop-wide) {
+        //1440px
+        min-width: $desktopRem * $ratio + rem;
+    }
+    */
+}
