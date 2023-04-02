@@ -2,31 +2,33 @@
     // .detail__container
 
     &__container {
-        display: flex;
+        padding-top: 14.8rem;
+        padding-bottom: 7.7rem;
+        display: inline-flex;
         flex-direction: column;
         gap: 3rem;
-        justify-content: flex-start;
-        @extend %main-adaptive-grid;
-        // @include mq(phone, max) {
-        //     width: 28.1rem;
-        //     //
-        // }
-        // @include mq(phone-wide, max) {
-        //     width: 38.1rem;
-        //     //
-        // }
-        // @include mq(phablet, max) {
-        //     width: 48.1rem;
-        //     //
-        // }
-        // @include mq(tablet-small, max) {
-        //     width: 50rem;
-        //     //
-        // }
-        // @include mq(tablet max) {
-        //     width: 60rem;
-        //     //
-        // }
+        @include mq(tablet, max) {
+            max-width: 63rem;
+        }
+        @include mq(tablet-small, max) {
+            max-width: 63rem;
+        }
+        @include mq(phablet, max) {
+            //560px
+            max-width: ($phabletRem) + rem;
+        }
+        @include mq(phone-wide, max) {
+            //480px
+            max-width: ($phone-wideRem) + rem;
+        }
+        @include mq(phone, max) {
+            //400px
+            max-width: ($phoneRem) + rem;
+        }
+        @media (width <= 380px) {
+            // padding: 0;
+            // margin: 0;
+        }
     }
 
     // .detail__title
@@ -36,6 +38,7 @@
         font-size: 3.4rem;
         line-height: 5rem;
         padding-bottom: 1rem;
+        max-width: 42.5rem;
     }
 
     // .detail__info
@@ -72,6 +75,7 @@
     &__text {
         color: #000;
         padding-bottom: 2.5rem;
+        max-width: 61rem;
         // padding-right: 8rem;
     }
 
@@ -87,4 +91,23 @@
         $curwidth: 33.9;
         @include create-responsive-image($curwidth);
     }
+
+    // .detail__heading1
+
+    &__heading1 {
+        font-weight: 500;
+        font-size: 3rem;
+        padding: 4rem 0 1.8rem 0;
+    }
+
+    // .detail__heading2
+
+    &__heading2 {
+        font-weight: 500;
+        font-size: 2.4rem;
+    }
+}
+
+._for-heading {
+    padding-bottom: 0;
 }

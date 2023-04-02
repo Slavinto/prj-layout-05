@@ -116,11 +116,11 @@ body {
 }
 
 .wrapper {
-    width: 100%;
-    min-height: 100%;
-    overflow: hidden;
+    position: relative;
     display: flex;
-
+    max-width: 100%;
+    max-height: 100%;
+    overflow: hidden;
     flex-direction: column;
     align-items: center;
 
@@ -138,28 +138,12 @@ body {
 
 // Main adaptive container
 ._container {
-    max-width: $maxWidthContainer + px;
-
-    @media (max-width: ($md1 + px)) {
-        max-width: $maxWidthContainer + px;
-    }
-    // @media (max-width: ($maxWidth+px)) {
-    //     max-width: 970px;
-    // }
-    @media (max-width: ($md2+px)) {
-        max-width: 768px;
-    }
-    @media (max-width: ($md3+px)) {
-        max-width: $md4 + px;
-    }
-    @media (max-width: ($md4+px)) {
-        padding: 0 10px;
-    }
+    @extend %main-adaptive-grid-desktop;
 }
 /*===========================================*/
 %main-adaptive-grid {
     padding: 0 3rem;
-    $starting-width: 32;
+    $starting-width: $maxWidthContainer / 10;
     @include mq(phone) {
         //400px
         min-width: $starting-width + rem;
@@ -186,12 +170,69 @@ body {
     }
     @include mq(desktop) {
         //1248px
+        min-width: ($desktopRem * $starting-width / $phoneRem) + rem;
     }
     @include mq(desktop-wide) {
         //1440px
+        min-width: ($desktop-wideRem * $starting-width / $phoneRem) + rem;
     }
 }
 /*===========================================*/
+%main-adaptive-grid-desktop {
+    padding: 0 3rem;
+    $starting-width: $maxWidthContainer / 10;
+    $ratio: $starting-width/$desktopRem;
+
+    // ---------------------------
+    @media (width >= 1440px) {
+        margin: 0 22vw;
+    }
+    @media (width >= 1660px) {
+        margin: 0 25vw;
+    }
+    @media (width >= 1860px) {
+        margin: 0 29vw;
+    }
+    // ---------------------------
+    @include mq(desktop-wide, max) {
+        //1440px
+        max-width: ($desktop-wideRem * $ratio) + rem;
+        // margin: 0 29rem;
+    }
+    @include mq(desktop, max) {
+        //1248px
+        max-width: ($desktopRem * $ratio) + rem;
+        // margin: 0 29rem;
+    }
+    @include mq(tablet-wide, max) {
+        //1024px
+        max-width: ($tablet-wideRem * $ratio) + rem;
+    }
+    @include mq(tablet, max) {
+        //768px
+        max-width: ($tabletRem * $ratio) + rem;
+    }
+    @include mq(tablet-small, max) {
+        //640px
+        max-width: ($tablet-smallRem * $ratio) + rem;
+    }
+    @include mq(phablet, max) {
+        //560px
+        max-width: ($phabletRem * $ratio + 16) + rem;
+    }
+    @include mq(phone-wide, max) {
+        //480px
+        max-width: ($phone-wideRem * $ratio + 16) + rem;
+    }
+    @include mq(phone, max) {
+        //400px
+        max-width: ($phoneRem * $ratio + 16) + rem;
+    }
+    @media (width <= 380px) {
+        // padding: 0;
+        // margin: 0;
+    }
+}
 /*===========================================*/
 /*===========================================*/
 /*===========================================*/

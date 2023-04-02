@@ -56,7 +56,7 @@
 
     width: $curwidth + rem;
     height: 100%;
-    object-fit: cover;
+    object-fit: scale-down;
     object-position: 0 0;
 
     @include mq(phone) {
@@ -71,26 +71,81 @@
         //560px
         min-width: $phone-wideRem * $ratio + rem;
     }
-    /*
     @include mq(tablet-small) {
         //640px
-        min-width: $phabletRem * $ratio + rem;
+        min-width: $phabletRem + rem;
     }
     @include mq(tablet) {
         //768px
-        min-width: $tablet-smallRem * $ratio + rem;
+        min-width: $tablet-smallRem + rem;
     }
+    /*
     @include mq(tablet-wide) {
         //1024px
-        min-width: $tabletRem * $ratio + rem;
+        min-width: $tabletRem + rem;
     }
+
     @include mq(desktop) {
         //1248px
-        min-width: $tablet-wideRem * $ratio + rem;
+        min-width: $tablet-wideRem + rem;
     }
     @include mq(desktop-wide) {
         //1440px
-        min-width: $desktopRem * $ratio + rem;
+        min-width: $desktopRem + rem;
     }
+    
     */
+}
+
+@mixin switch-layout(
+    $starting-width: 10,
+    $starting-height: 10,
+    $layout: mobile
+) {
+    $aspect-ratio: $starting-height / $starting-width;
+
+    // -------------------------
+    // mobile layout
+    // -------------------------
+    @if ($layout == mobile) {
+        $index: $starting-width / $phoneRem;
+
+        @media (width <= 400px) {
+            //400px
+            $curwidth: $phoneRem * $index;
+            width: $curwidth + rem;
+            height: $curwidth * $aspect-ratio + rem;
+        }
+        @include mq(phone) {
+            //400px
+            // min-width: $starting-width + rem;
+            // min-height: $starting-width * $aspect-ratio + rem;
+            width: $starting-width + rem;
+            height: $starting-width * $aspect-ratio + rem;
+        }
+    } @else if ($layout == desktop) {
+        // -------------------------
+        // desktop layout
+        // -------------------------
+        $index: $starting-width / $desktopRem;
+        @media (width >= 1248px) {
+            //1440px
+            $curwidth: $desktop-wideRem * $index;
+            width: $curwidth + rem;
+            height: $curwidth * $aspect-ratio + rem;
+        }
+
+        @include mq(desktop, max) {
+            //1248px
+            $curwidth: $desktopRem * $index;
+            width: $curwidth + rem;
+            height: $curwidth * $aspect-ratio + rem;
+        }
+        @include mq(tablet-wide, max) {
+            //1024px
+            $curwidth: $starting-width;
+            max-width: $curwidth + rem;
+            max-height: $starting-height + rem;
+        }
+    }
 }

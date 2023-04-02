@@ -1,17 +1,13 @@
-@import "defaults";
-
 .header {
     // .header__menu
 
     &__menu {
-        align-self: flex-end;
         padding: 0 1rem;
-        display: flex;
-        flex: 1 0 8.7rem;
-        align-items: center;
+        display: inline-flex;
         @media (max-width: ($md3+px)) {
             height: 5rem;
         }
+        @extend %header-template;
     }
 }
 .menu {
@@ -19,19 +15,20 @@
 
     &__icon {
         display: none;
+        // @extend %header-template;
         @media (max-width: ($md3+px)) {
-            transform: scale(1.4);
             display: block;
             position: absolute;
-            top: 3.6rem;
-            right: 4rem;
+            top: -0.5rem;
+            right: -1rem;
             width: 3rem;
-            height: 1.8rem;
+            height: 0.8rem;
             z-index: 10;
+            transform: scale(1.4);
             cursor: pointer;
             span {
                 transition: all 0.3s ease 0s;
-                top: calc(50% - 1px);
+                top: -0.5rem;
                 left: 0;
                 position: absolute;
                 width: 100%;
@@ -128,6 +125,17 @@
     }
 }
 .icon-menu {
+}
+
+// Header menu style template
+%header-template {
+    display: block;
+    position: absolute;
+    top: 3.6rem;
+    right: 4rem;
+    width: 3rem;
+    height: 1.8rem;
+    z-index: 10;
 }
 
 /*
