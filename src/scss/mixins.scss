@@ -98,7 +98,9 @@
 }
 
 @mixin switch-layout(
+    // starting width - rem
     $starting-width: 10,
+    // starting height - rem
     $starting-height: 10,
     $layout: mobile
 ) {

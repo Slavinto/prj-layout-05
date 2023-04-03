@@ -4,165 +4,47 @@
     <body>
         <div class="wrapper">
             @@include('./html/header.html', {})
-            <section class="greeting__container _container">
-                <article class="greeting__article">
-                    <h1 class="article__header">
-                        Hi, I am John, <br />
-                        Creative Technologist
-                    </h1>
-                    <p class="article__text _text">
-                        Amet minim mollit non deserunt ullamco est sit aliqua
-                        dolor do amet sint. Velit officia consequat duis enim
-                        velit mollit. Exercitation veniam consequat sunt nostrud
-                        amet.
-                    </p>
-                    <a href="#" class="article__link _btn-main"
-                        >Download Resume</a
-                    >
-                </article>
-                <figure class="greeting__author-avatar">
-                    <img
-                        class="avatar"
-                        src="@img/author.jpg"
-                        alt="smiling man"
-                    />
-                </figure>
-            </section>
-            <section class="recent-posts _full-width">
-                <div class="recent-posts__container _container _centered">
-                    <div class="recent-posts__header">
-                        <div class="recent-posts__title">Recent Posts</div>
-                        <a href="#" class="recent-posts__view-all">View all </a>
-                    </div>
-                    <div class="recent-posts__items">
-                        <article class="recent-posts__item recent-post">
-                            <a href="#" class="recent-post__title">
-                                Making a design system from scratch
-                            </a>
-                            <div class="recent-post__info">
-                                12 Feb 2020 <span>|</span> Design, Pattern
-                            </div>
-                            <p class="recent-post__text _text">
-                                Amet minim mollit non deserunt ullamco est sit
-                                aliqua dolor do amet sint. Velit officia
-                                consequat duis enim velit mollit. Exercitation
-                                veniam consequat sunt nostrud amet.
-                            </p>
-                        </article>
-                        <article class="recent-posts__item recent-post">
-                            <a href="#" class="recent-post__title">
-                                Making a design system from scratch
-                            </a>
-                            <div class="recent-post__info">
-                                12 Feb 2020 <span>|</span> Design, Pattern
-                            </div>
-                            <p class="recent-post__text _text">
-                                Amet minim mollit non deserunt ullamco est sit
-                                aliqua dolor do amet sint. Velit officia
-                                consequat duis enim velit mollit. Exercitation
-                                veniam consequat sunt nostrud amet.
-                            </p>
-                        </article>
-                    </div>
+            <main class="_container">
+                <div class="gallery _adaptive-gallery">
+                    <ul class="gallery__images">
+                        <li class="gallery__item">
+                            <img
+                                src="@img/1.jpg"
+                                alt="1"
+                                class="gallery__image"
+                            />
+                        </li>
+                        <li class="gallery__item">
+                            <img
+                                src="@img/2.jpg"
+                                alt="1"
+                                class="gallery__image"
+                            />
+                        </li>
+                        <li class="gallery__item">
+                            <img
+                                src="@img/3.jpg"
+                                alt="1"
+                                class="gallery__image"
+                            />
+                        </li>
+                        <li class="gallery__item">
+                            <img
+                                src="@img/4.jpg"
+                                alt="1"
+                                class="gallery__image"
+                            />
+                        </li>
+                        <li class="gallery__item">
+                            <img
+                                src="@img/5.jpg"
+                                alt="1"
+                                class="gallery__image"
+                            />
+                        </li>
+                    </ul>
                 </div>
-            </section>
-            <section class="featured-works">
-                <div class="featured-works__container _container _centered">
-                    <div class="featured-works__header">
-                        <div class="featured-works__title">Featured works</div>
-                    </div>
-                    <div class="featured-works__items">
-                        <article class="featured-works__item featured-work">
-                            <div class="featured-work__picture">
-                                <img
-                                    class="featured-work__image"
-                                    src="@img/Rectangle 30.jpg"
-                                    alt="UI dashboard screenshot"
-                                />
-                            </div>
-                            <div class="featured-work__description description">
-                                <div class="description__title">
-                                    Designing Dashboards
-                                </div>
-                                <div class="description__info">
-                                    <div class="description__year-tag">
-                                        2020
-                                    </div>
-                                    <div class="description__category">
-                                        Dashboard
-                                    </div>
-                                </div>
-                                <p class="description__text _text">
-                                    Amet minim mollit non deserunt ullamco est
-                                    sit aliqua dolor do amet sint. Velit officia
-                                    consequat duis enim velit mollit.
-                                    Exercitation veniam consequat sunt nostrud
-                                    amet.
-                                </p>
-                            </div>
-                        </article>
-                        <article class="featured-works__item featured-work">
-                            <div class="featured-work__picture">
-                                <img
-                                    class="featured-work__image"
-                                    src="@img/portrait1.jpg"
-                                    alt="woman portrait illustration"
-                                />
-                            </div>
-                            <div class="featured-work__description description">
-                                <div class="description__title">
-                                    Vibrant Portraits of 2020
-                                </div>
-                                <div class="description__info">
-                                    <div class="description__year-tag">
-                                        2018
-                                    </div>
-                                    <div class="description__category">
-                                        Illustration
-                                    </div>
-                                </div>
-                                <p class="description__text _text">
-                                    Amet minim mollit non deserunt ullamco est
-                                    sit aliqua dolor do amet sint. Velit officia
-                                    consequat duis enim velit mollit.
-                                    Exercitation veniam consequat sunt nostrud
-                                    amet.
-                                </p>
-                            </div>
-                        </article>
-
-                        <article class="featured-works__item featured-work">
-                            <div class="featured-work__picture">
-                                <img
-                                    class="featured-work__image"
-                                    src="@img/Rectangle 34.jpg"
-                                    alt="curly letter font typography"
-                                />
-                            </div>
-                            <div class="featured-work__description description">
-                                <div class="description__title">
-                                    36 Days of Malayalam type
-                                </div>
-                                <div class="description__info">
-                                    <div class="description__year-tag">
-                                        2018
-                                    </div>
-                                    <div class="description__category">
-                                        Typography
-                                    </div>
-                                </div>
-                                <p class="description__text _text">
-                                    Amet minim mollit non deserunt ullamco est
-                                    sit aliqua dolor do amet sint. Velit officia
-                                    consequat duis enim velit mollit.
-                                    Exercitation veniam consequat sunt nostrud
-                                    amet.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </section>
+            </main>
             @@include('./html/footer.html', {})
         </div>
         <script src="js/app.min.js"></script>
