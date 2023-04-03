@@ -28,21 +28,21 @@ $breakpoints: (
     "desktop-wide": 1440px,
 );
 // 40
-$phoneRem: map_get($breakpoints, phone) / 10 / 1px;
+$phoneRem: calc(map_get($breakpoints, phone) / 10 / 1px);
 // 48
-$phone-wideRem: map_get($breakpoints, phone-wide) / 10 / 1px;
+$phone-wideRem: calc(map_get($breakpoints, phone-wide) / 10 / 1px);
 // 56
-$phabletRem: map_get($breakpoints, phablet) / 10 / 1px;
+$phabletRem: calc(map_get($breakpoints, phablet) / 10 / 1px);
 // 64
-$tablet-smallRem: map_get($breakpoints, tablet-small) / 10 / 1px;
+$tablet-smallRem: calc(map_get($breakpoints, tablet-small) / 10 / 1px);
 // 76.8
-$tabletRem: map_get($breakpoints, tablet) / 10 / 1px;
+$tabletRem: calc(map_get($breakpoints, tablet) / 10 / 1px);
 // 102.4
-$tablet-wideRem: map_get($breakpoints, tablet-wide) / 10 / 1px;
+$tablet-wideRem: calc(map_get($breakpoints, tablet-wide) / 10 / 1px);
 // 124.8
-$desktopRem: map_get($breakpoints, desktop) / 10 / 1px;
+$desktopRem: calc(map_get($breakpoints, desktop) / 10 / 1px);
 // 144
-$desktop-wideRem: map_get($breakpoints, desktop-wide) / 10 / 1px;
+$desktop-wideRem: calc(map_get($breakpoints, desktop-wide) / 10 / 1px);
 
 // Use this to get a value from this map
 // map-get($breakpoints, "phone");
@@ -143,45 +143,45 @@ body {
 /*===========================================*/
 %main-adaptive-grid {
     padding: 0 3rem;
-    $starting-width: $maxWidthContainer / 10;
+    $starting-width: calc($maxWidthContainer / 10);
     @include mq(phone) {
         //400px
         min-width: $starting-width + rem;
     }
     @include mq(phone-wide) {
         //480px
-        min-width: ($phone-wideRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($phone-wideRem * $starting-width / $phoneRem) + rem;
     }
     @include mq(phablet) {
         //560px
-        min-width: ($phabletRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($phabletRem * $starting-width / $phoneRem) + rem;
     }
     @include mq(tablet-small) {
         //640px
-        min-width: ($tablet-smallRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($tablet-smallRem * $starting-width / $phoneRem) + rem;
     }
     @include mq(tablet) {
         //768px
-        min-width: ($tabletRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($tabletRem * $starting-width / $phoneRem) + rem;
     }
     @include mq(tablet-wide) {
         //1024px
-        min-width: ($tablet-wideRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($tablet-wideRem * $starting-width / $phoneRem) + rem;
     }
     @include mq(desktop) {
         //1248px
-        min-width: ($desktopRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($desktopRem * $starting-width / $phoneRem) + rem;
     }
     @include mq(desktop-wide) {
         //1440px
-        min-width: ($desktop-wideRem * $starting-width / $phoneRem) + rem;
+        min-width: calc($desktop-wideRem * $starting-width / $phoneRem) + rem;
     }
 }
 /*===========================================*/
 %main-adaptive-grid-desktop {
     padding: 0 3rem;
-    $starting-width: $maxWidthContainer / 10;
-    $ratio: $starting-width/$desktopRem;
+    $starting-width: calc($maxWidthContainer / 10);
+    $ratio: calc($starting-width / $desktopRem);
 
     // ---------------------------
     @media (width >= 1440px) {
@@ -196,37 +196,37 @@ body {
     // ---------------------------
     @include mq(desktop-wide, max) {
         //1440px
-        max-width: ($desktop-wideRem * $ratio) + rem;
+        max-width: calc($desktop-wideRem * $ratio) + rem;
         // margin: 0 29rem;
     }
     @include mq(desktop, max) {
         //1248px
-        max-width: ($desktopRem * $ratio) + rem;
+        max-width: calc($desktopRem * $ratio) + rem;
         // margin: 0 29rem;
     }
     @include mq(tablet-wide, max) {
         //1024px
-        max-width: ($tablet-wideRem * $ratio) + rem;
+        max-width: calc($tablet-wideRem * $ratio) + rem;
     }
     @include mq(tablet, max) {
         //768px
-        max-width: ($tabletRem * $ratio) + rem;
+        max-width: calc($tabletRem * $ratio) + rem;
     }
     @include mq(tablet-small, max) {
         //640px
-        max-width: ($tablet-smallRem * $ratio) + rem;
+        max-width: calc($tablet-smallRem * $ratio) + rem;
     }
     @include mq(phablet, max) {
         //560px
-        max-width: ($phabletRem * $ratio + 16) + rem;
+        max-width: calc($phabletRem * $ratio + 16) + rem;
     }
     @include mq(phone-wide, max) {
         //480px
-        max-width: ($phone-wideRem * $ratio + 16) + rem;
+        max-width: calc($phone-wideRem * $ratio + 16) + rem;
     }
     @include mq(phone, max) {
         //400px
-        max-width: ($phoneRem * $ratio + 16) + rem;
+        max-width: calc($phoneRem * $ratio + 16) + rem;
     }
     @media (width <= 380px) {
         // padding: 0;

@@ -31,7 +31,7 @@
 
 @mixin mq($width, $type: min) {
     @if map_has_key($breakpoints, $width) {
-        $width: map_get($breakpoints, $width);
+        $width: calc(map_get($breakpoints, $width));
         @if $type == max {
             $width: $width - 1px;
         }
@@ -52,7 +52,7 @@
     // $curwidth - original mobile width
 
     // 1st breakpoint divided by initial mobile-first size
-    $ratio: $phoneRem / $curwidth;
+    $ratio: calc($phoneRem / $curwidth);
 
     width: $curwidth + rem;
     height: 100%;
@@ -61,15 +61,15 @@
 
     @include mq(phone) {
         //400px
-        min-width: $curwidth * $ratio + rem;
+        min-width: calc($curwidth * $ratio) + rem;
     }
     @include mq(phone-wide) {
         //480px
-        min-width: $phoneRem * $ratio + rem;
+        min-width: calc($phoneRem * $ratio) + rem;
     }
     @include mq(phablet) {
         //560px
-        min-width: $phone-wideRem * $ratio + rem;
+        min-width: calc($phone-wideRem * $ratio) + rem;
     }
     @include mq(tablet-small) {
         //640px
@@ -102,44 +102,42 @@
     $starting-height: 10,
     $layout: mobile
 ) {
-    $aspect-ratio: $starting-height / $starting-width;
+    $aspect-ratio: calc($starting-height / $starting-width);
 
     // -------------------------
     // mobile layout
     // -------------------------
     @if ($layout == mobile) {
-        $index: $starting-width / $phoneRem;
+        $index: calc($starting-width / $phoneRem);
 
         @media (width <= 400px) {
             //400px
-            $curwidth: $phoneRem * $index;
+            $curwidth: calc($phoneRem * $index);
             width: $curwidth + rem;
-            height: $curwidth * $aspect-ratio + rem;
+            height: calc($curwidth * $aspect-ratio) + rem;
         }
         @include mq(phone) {
             //400px
-            // min-width: $starting-width + rem;
-            // min-height: $starting-width * $aspect-ratio + rem;
             width: $starting-width + rem;
-            height: $starting-width * $aspect-ratio + rem;
+            height: calc($starting-width * $aspect-ratio) + rem;
         }
     } @else if ($layout == desktop) {
         // -------------------------
         // desktop layout
         // -------------------------
-        $index: $starting-width / $desktopRem;
+        $index: calc($starting-width / $desktopRem);
         @media (width >= 1248px) {
             //1440px
-            $curwidth: $desktop-wideRem * $index;
+            $curwidth: calc($desktop-wideRem * $index);
             width: $curwidth + rem;
             height: $curwidth * $aspect-ratio + rem;
         }
 
         @include mq(desktop, max) {
             //1248px
-            $curwidth: $desktopRem * $index;
+            $curwidth: calc($desktopRem * $index);
             width: $curwidth + rem;
-            height: $curwidth * $aspect-ratio + rem;
+            height: calc($curwidth * $aspect-ratio) + rem;
         }
         @include mq(tablet-wide, max) {
             //1024px
