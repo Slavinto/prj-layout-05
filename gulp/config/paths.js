@@ -15,7 +15,7 @@ export const path = {
         fonts: `${buildFolder}/fonts/`,
     },
     src: {
-        images: `${srcFolder}/img/**/*.{jpg, jpeg, png, gif webp}`,
+        images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
         svg: `${srcFolder}/img/**/*.svg`,
         js: `${srcFolder}/js/app.js`,
         scss: `${srcFolder}/scss/style.scss`,
@@ -25,7 +25,7 @@ export const path = {
         svgicons: `${srcFolder}/svgicons/*.svg`,
     },
     watch: {
-        images: `${srcFolder}/img/**/*.{jpg, jpeg, png, svg, gif, ico, webp}`,
+        images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
         js: `${srcFolder}/js/**/*.js`,
         scss: `${srcFolder}/scss/**/*.scss`,
         // html: `${srcFolder}/**/*.pug`,
