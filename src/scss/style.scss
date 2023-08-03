@@ -1,2 +1,7 @@
-@import "defaults", "gallery", "header", "home", "footer";
-// Variables
+@forward "header";
+@forward "home";
+@forward "clients";
+@forward "contact-form";
+@forward "services";
+@forward "stats";
+@forward "footer";

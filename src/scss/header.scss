@@ -1,30 +1,83 @@
+@use "defaults" as d;
+
+.bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 144rem;
+    height: 68.3rem;
+    img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+    }
+}
+
 .header {
+    @include d.mq(tablet, max) {
+        display: flex;
+        align-items: center;
+    }
+    padding: 0;
+    padding-top: 6.5rem;
+    width: 100%;
+
+    @include d.mq(phone, max) {
+        padding: 6.5rem 6rem 0 6rem;
+    }
+
+    // .header__mobile-logo
+
+    &__mobile-logo {
+        margin: 0 auto;
+    }
+
     // .header__menu
 
     &__menu {
-        padding: 0 1rem;
-        display: inline-flex;
-        @media (max-width: ($tabletRem*10+px)) {
-            height: 5rem;
+        @include d.mq(tablet, max) {
+            padding-left: 5rem;
         }
-        @extend %header-template;
     }
 }
+
+.m-l {
+    display: none;
+    @include d.mq(tablet, max) {
+        display: inline-block;
+        // transform: translateX(-50%);
+        &__text {
+            font-size: 5rem;
+            font-weight: 700;
+            filter: drop-shadow(0 0.4rem 0.4rem rgba(0, 0, 0, 0.25));
+
+            &:link,
+            &:visited {
+                color: d.$dark;
+            }
+            &:hover,
+            &:active {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
 .menu {
     // .menu__icon
 
     &__icon {
+        position: relative;
         display: none;
-        // @extend %header-template;
-        @media (max-width: ($tabletRem*10+px)) {
+
+        @include d.mq(tablet, max) {
             display: block;
-            position: absolute;
-            top: -0.5rem;
-            right: -1rem;
-            width: 3rem;
-            height: 0.8rem;
+            width: 4.2rem;
+            height: 1.12rem;
             z-index: 10;
-            transform: scale(1.4);
             cursor: pointer;
             span {
                 transition: all 0.3s ease 0s;
@@ -33,9 +86,9 @@
                 position: absolute;
                 width: 100%;
                 height: 2px;
-                background-color: $cDark;
+                background-color: d.$dark;
                 &:first-child {
-                    top: 0;
+                    top: 1px;
                 }
                 &:last-child {
                     top: auto;
@@ -62,7 +115,9 @@
     // .menu__body
 
     &__body {
-        @media (max-width: ($tabletRem*10+px)) {
+        display: block;
+        @include d.mq(tablet, max) {
+            display: flex;
             transform: translateY(-100%);
             padding: 9rem;
             width: 100%;
@@ -70,10 +125,9 @@
             position: fixed;
             top: 0;
             left: 0;
-            display: flex;
             align-items: center;
             justify-content: center;
-            background-color: $cLightOverlay;
+            background-color: d.$lightOverlay;
             z-index: 1;
             transition: all 0.4s ease-out;
             overflow: auto;
@@ -87,15 +141,40 @@
     // .menu__list
 
     &__list {
+        width: 100%;
+
+        &._active {
+            display: flex;
+            flex-direction: column;
+            .menu__link {
+                &.logo {
+                    margin: 0;
+                    .link__text {
+                        font-size: 5rem;
+                    }
+                }
+
+                .link__text {
+                    font-size: 4rem;
+                    text-transform: uppercase;
+                }
+            }
+        }
+
+        .logo {
+            margin-right: auto;
+            .link__text {
+                font-weight: 700;
+                filter: drop-shadow(0 0.4rem 0.4rem rgba(0, 0, 0, 0.25));
+            }
+        }
+
         position: relative;
         z-index: 10;
         display: flex;
-        gap: 3.3rem;
-        align-items: center;
-        justify-content: flex-end;
-        // width: 100%;
-        // height: 100%;
-        @media (max-width: ($tabletRem*10+px)) {
+        gap: 6rem;
+
+        @include d.mq(tablet max) {
             align-items: center;
             flex-direction: column;
         }
@@ -104,7 +183,7 @@
     // .menu__link
 
     &__link a {
-        @media (max-width: ($tabletRem*10+px)) {
+        @media (max-width: map_get(d.$bps, "tablet")) {
             .link__text {
                 font-size: 3.2rem;
             }
@@ -113,29 +192,54 @@
         &:visited {
             font-weight: 500;
             font-size: 2rem;
-            color: $cDark;
+            color: d.$dark;
             transition: color 0.3s;
         }
         &:hover,
         &:active {
             font-weight: 500;
             font-size: 2rem;
-            color: $cPrimary;
+            color: d.$primary;
         }
     }
 }
 .icon-menu {
 }
+.hero {
+    // .hero__main-article
 
-// Header menu style template
-%header-template {
-    display: block;
-    position: absolute;
-    top: 3.6rem;
-    right: 4rem;
-    width: 3rem;
-    height: 1.8rem;
-    z-index: 10;
+    &__main-article {
+        padding-top: 11.5rem;
+        width: 68rem;
+        height: 18rem;
+        display: flex;
+    }
+
+    // .hero__main-title
+
+    &__main-title {
+    }
+
+    // .hero__contact
+
+    &__contact {
+    }
+}
+.h-c {
+    // .h-c__text
+
+    &__text {
+    }
+
+    // .h-c__contact-btn
+
+    &__contact-btn {
+    }
+
+    // .h-c__contact-link
+
+    &__contact-link {
+    }
 }
 
 /*
@@ -143,7 +247,7 @@ Burger menu styles
 
 .icon-menu {
     display: none;
-    @media (max-width: ($tabletRem*10+rem)) {
+    @media (max-width: map_get(d.$bps, "tablet")) {
         display: block;
         position: absolute;
         top: 1.8rem;

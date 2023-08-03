@@ -1,44 +1,21 @@
-@import "fonts", "colors", "mixins";
+@forward "fonts";
+@forward "colors";
+@forward "mixins";
+@forward "maps";
+
+@use "fonts" as f;
+@use "colors" as c;
+@use "mixins" as m;
+@use "maps";
 
 /*===========================================*/
 // Variables
 /*===========================================*/
+$bps: maps.$breakpoints;
 $min-width: 320px;
-$wrapper: 1152;
-$main-content-container: 1057;
+$wrapper: 2000;
+$main-content-container: 1144;
 
-// =======================
-// =======================
-// Breakpoints
-$breakpoints: (
-    "phone": 400px,
-    "phone-wide": 480px,
-    "phablet": 560px,
-    "tablet-small": 640px,
-    "tablet": 768px,
-    "tablet-wide": 1024px,
-    "desktop": 1248px,
-    "desktop-wide": 1440px,
-);
-// 40
-$phoneRem: calc(map_get($breakpoints, phone) / 10 / 1px);
-// 48
-$phone-wideRem: calc(map_get($breakpoints, phone-wide) / 10 / 1px);
-// 56
-$phabletRem: calc(map_get($breakpoints, phablet) / 10 / 1px);
-// 64
-$tablet-smallRem: calc(map_get($breakpoints, tablet-small) / 10 / 1px);
-// 76.8
-$tabletRem: calc(map_get($breakpoints, tablet) / 10 / 1px);
-// 102.4
-$tablet-wideRem: calc(map_get($breakpoints, tablet-wide) / 10 / 1px);
-// 124.8
-$desktopRem: calc(map_get($breakpoints, desktop) / 10 / 1px);
-// 144
-$desktop-wideRem: calc(map_get($breakpoints, desktop-wide) / 10 / 1px);
-
-// Use this to get a value from this map
-// map-get($breakpoints, "phone");
 /*===========================================*/
 //  Imports
 /*===========================================*/
@@ -59,28 +36,25 @@ html {
 
     font-size: calc(10 / 16) * 100% !important;
 
-    // @media (max-width: ($md2+px)) {
-    //     font-size: calc(11 / 16) * 100%;
-    // }
-    @media (max-width: ($desktopRem*10 + px)) {
+    @media (max-width: map_get($bps, "desktop")) {
         font-size: calc(10 / 16) * 100% !important;
     }
-    @media (max-width: ($tablet-wideRem*10 + px)) {
+    @media (max-width: map_get($bps, "tablet-wide")) {
         font-size: calc(8.5 / 16) * 100% !important;
     }
-    @media (max-width: ($tabletRem*10+px)) {
+    @media (max-width: map_get($bps, "tablet")) {
         font-size: calc(7.5 / 16) * 100% !important;
     }
-    @media (max-width: ($phone-wideRem+px)) {
+    @media (max-width: map_get($bps, "phone-wide")) {
         font-size: calc(6.5 / 16) * 100% !important;
     }
-    @media (max-width: ($phoneRem+px)) {
+    @media (max-width: map_get($bps, "phone")) {
         font-size: calc(6 / 16) * 100% !important;
     }
 }
 
 // Default font-family
-$fontFamily: "Rubik";
+$fontFamily: "Montserrat";
 
 body {
     ul {
@@ -93,7 +67,7 @@ body {
     line-height: 1;
     font-size: 1.2rem;
     font-weight: 400;
-    color: $cDark;
+    color: c.$dark;
 }
 
 /*===========================================*/
@@ -111,6 +85,17 @@ body {
     margin: 0 auto;
 }
 
+._dark {
+    color: c.$dark !important;
+}
+
+._mobile-link {
+    display: none;
+    @include m.mq(tablet, max) {
+        display: inline-block;
+    }
+}
+
 ._full-width {
     align-self: stretch;
 }
@@ -123,21 +108,39 @@ body {
 }
 
 .wrapper {
+    align-items: center;
+    position: relative;
     display: flex;
     min-height: 100%;
     overflow: hidden;
     flex-direction: column;
-    gap: 8rem;
 }
 
 %btn {
     display: inline-block;
-    font-family: "Raleway";
     font-weight: 800;
     font-size: 1rem;
     padding: 1.5rem 2.8rem;
     border-radius: 5px;
     letter-spacing: 0.14em;
+}
+
+%icon-image {
+    object-position: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    object-fit: none;
+}
+
+%overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 0;
+    color: c.$headerText;
 }
 
 main {
@@ -160,132 +163,57 @@ main {
 // Container current
 /*===========================================*/
 %container-current {
-    $ratio: 1;
-    padding: 0 1.5rem;
-    $curwidth: calc($main-content-container / 10);
-    // ---------------------------
+    padding: 0 2rem;
+    $w: $main-content-container + px;
 
-    @media (width >= ($desktopRem*10-1+px)) {
-        max-width: calc($curwidth * $ratio) + rem;
-    }
+    // @media (width > map_get($bps, "desktop-wide")){
+    //     // 1440px
+    //     max-width: map_get($bps, "desktop-wide");
+    // }
 
-    @include mq(desktop, max) {
-        max-width: calc($curwidth * $ratio) + rem;
+    // @include m.mq(desktop-wide, max) {
+    //     //1248px
+    //     max-width: map_get($bps, "desktop");
+    // }
+
+    /*===this=media=query=must=always=be=ontop===*/
+    @media (width > $w) {
+        // 1144px
+        max-width: $w;
     }
-    @include mq(tablet-wide, max) {
+    /*===========================================*/
+
+    @include m.mq(desktop, max) {
         //1024px
-        max-width: calc($tablet-wideRem * $ratio) + rem;
+        max-width: map_get($bps, "tablet-wide");
     }
-    @include mq(tablet, max) {
+
+    @include m.mq(tablet-wide, max) {
         //768px
-        max-width: calc($tabletRem * $ratio) + rem;
+        max-width: map_get($bps, "tablet");
     }
-    @include mq(tablet-small, max) {
+
+    @include m.mq(tablet, max) {
         //640px
-        max-width: calc($tablet-smallRem * $ratio) + rem;
+        max-width: map_get($bps, "tablet-small");
     }
-    @include mq(phablet, max) {
+
+    @include m.mq(tablet-small, max) {
         //560px
-        max-width: calc($phabletRem * $ratio + 16) + rem;
+        max-width: map_get($bps, "phablet");
     }
-    @include mq(phone-wide, max) {
+
+    @include m.mq(phablet, max) {
         //480px
-        max-width: calc($phone-wideRem * $ratio + 16) + rem;
+        max-width: map_get($bps, "phone-wide");
     }
-    @include mq(phone, max) {
+    @include m.mq(phone-wide, max) {
         //400px
-        max-width: calc($phoneRem * $ratio + 16) + rem;
+        max-width: map_get($bps, "phone");
     }
     @media (width <= 380px) {
         // padding: 0;
         // margin: 0;
     }
 }
-/*===========================================*/
-%main-adaptive-grid {
-    @include mq(phone) {
-        //400px
-    }
-    @include mq(phone-wide) {
-        //480px
-        min-width: calc($phone-wideRem * $main-content-container/ $phoneRem) +
-            rem;
-    }
-    @include mq(phablet) {
-        //560px
-        min-width: calc($phabletRem * $main-content-container/ $phoneRem) + rem;
-    }
-    @include mq(tablet-small) {
-        //640px
-        min-width: calc($tablet-smallRem * $main-content-container/ $phoneRem) +
-            rem;
-    }
-    @include mq(tablet) {
-        //768px
-        min-width: calc($tabletRem * $main-content-container/ $phoneRem) + rem;
-    }
-    @include mq(tablet-wide) {
-        //1024px
-        min-width: calc($tablet-wideRem * $main-content-container/ $phoneRem) +
-            rem;
-    }
-    @include mq(desktop) {
-        //1248px
-        min-width: calc($desktopRem * $main-content-container/ $phoneRem) + rem;
-    }
-    @include mq(desktop-wide) {
-        //1440px
-        min-width: calc($desktop-wideRem * $main-content-container/ $phoneRem) +
-            rem;
-    }
-}
-/*===========================================*/
-%main-adaptive-grid-desktop {
-    $ratio: 1;
-    // ---------------------------
-    @media (width >= 1440px) {
-    }
-    @media (width >= 1660px) {
-    }
-    @media (width >= 1860px) {
-    }
-    // ---------------------------
-    @include mq(desktop-wide, max) {
-        //1440px
-    }
-    @include mq(desktop, max) {
-        //1248px
-        max-width: calc($desktopRem * $ratio) + rem;
-    }
-    @include mq(tablet-wide, max) {
-        //1024px
-        max-width: calc($tablet-wideRem * $ratio) + rem;
-    }
-    @include mq(tablet, max) {
-        //768px
-        max-width: calc($tabletRem * $ratio) + rem;
-    }
-    @include mq(tablet-small, max) {
-        //640px
-        max-width: calc($tablet-smallRem * $ratio) + rem;
-    }
-    @include mq(phablet, max) {
-        //560px
-        max-width: calc($phabletRem * $ratio + 16) + rem;
-    }
-    @include mq(phone-wide, max) {
-        //480px
-        max-width: calc($phone-wideRem * $ratio + 16) + rem;
-    }
-    @include mq(phone, max) {
-        //400px
-        max-width: calc($phoneRem * $ratio + 16) + rem;
-    }
-    @media (width <= 380px) {
-        // padding: 0;
-        // margin: 0;
-    }
-}
-/*===========================================*/
-/*===========================================*/
 /*===========================================*/

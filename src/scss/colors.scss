@@ -1,11 +1,18 @@
 /*===========================================*/
 /* Colors */
 /*===========================================*/
-$cPrimary: #ff6464;
-$cPrimaryShade1: #e65a5a;
+$primary: #ff6464;
+$primaryShade1: #e65a5a;
 
-$cSecondary: #00a8cc;
-$cDark: #21243d;
-$cLight: #8695a4;
-$cLightOverlay: rgba(134, 149, 164, 0.95);
+$secondary: #00a8cc;
+$dark: #00031a;
+$darkOverlay: rgb(28, 36, 42, 0.95);
+$darkOverlay2: rgb(28, 36, 42, 0.6);
+$mainOverlay: rgba(187, 156, 102, 0.97);
+$light: #8695a4;
+$lightOverlay: rgba(134, 149, 164, 0.98);
 /*===========================================*/
+// Text
+/*===========================================*/
+$headerText: #fff;
+$linkHover: #4541ff;

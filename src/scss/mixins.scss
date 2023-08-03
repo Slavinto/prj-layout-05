@@ -1,3 +1,7 @@
+@use "maps";
+
+$bps: maps.$breakpoints;
+
 // To quickly centre a block element without having to worry about if there is any top or bottom margin already applied.
 
 @mixin push--auto {
@@ -18,7 +22,7 @@
 
 // A massive time saver! You can just use pixel values but we have some default breakpoints setup that work too, another time saver while keeping your breakpoints consistent.
 
-// $breakpoints: (
+// $bps: (
 //     "phone": 400px,
 //     "phone-wide": 480px,
 //     "phablet": 560px,
@@ -30,8 +34,8 @@
 // );
 
 @mixin mq($width, $type: min) {
-    @if map_has_key($breakpoints, $width) {
-        $width: calc(map_get($breakpoints, $width));
+    @if map_has_key($bps, $width) {
+        $width: calc(map_get($bps, $width));
         @if $type == max {
             $width: $width - 1px;
         }
