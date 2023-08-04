@@ -108,9 +108,9 @@ body {
 }
 
 .wrapper {
+    display: flex;
     align-items: center;
     position: relative;
-    display: flex;
     min-height: 100%;
     overflow: hidden;
     flex-direction: column;

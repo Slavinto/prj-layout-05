@@ -3,9 +3,10 @@
     @@include('./html/head.html', { "title": "Home Page" })
     <body>
         <div class="wrapper">
-            @@include('./html/header.html', {})
-            <main class="_container"></main>
-            @@include('./html/footer.html', {})
+            <main class="main-container _container">
+                @@include('./html/header.html', {})
+                @@include('./html/footer.html', {})
+            </main>
         </div>
         <script src="js/app.min.js"></script>
     </body>
