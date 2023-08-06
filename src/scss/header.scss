@@ -1,32 +1,137 @@
 @use "defaults" as d;
 
-.bg {
+.hero {
+    width: 100%;
+    height: 68.3rem;
+    flex: 1 1 auto;
     display: flex;
     flex-direction: column;
-    position: relative;
-    width: 144rem;
-    height: 68.3rem;
-    transform: translateX(-11.7%);
-    img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
+
+    // .hero__main-article
+
+    &__main-article {
+        display: flex;
+        align-items: center;
+        padding: 11.5rem 0rem 0rem 9rem;
+        gap: 4rem;
+        width: 76rem;
+        height: 28rem;
+
+        @include d.mq(tablet, max) {
+            flex-direction: column;
+            align-items: center;
+            padding: 0;
+            width: 35rem;
+            height: 100%;
+            grid-column: 2/3;
+            text-align: center;
+        }
+    }
+
+    // .hero__main-title
+
+    &__main-title {
+        width: 32rem;
+        color: #00031a;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        font-family: Raleway;
+        font-size: 4.4rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 140%; /* 6.16rem */
+        letter-spacing: 0.132rem;
+        span {
+            color: #00031a;
+            font-family: Raleway;
+            font-size: 4.4rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 140%;
+            letter-spacing: 0.132rem;
+        }
+    }
+
+    // .hero__contact
+
+    &__contact {
+    }
+}
+.h-c {
+    align-self: flex-start;
+    display: flex;
+    width: 31.6rem;
+    flex-direction: column;
+    gap: 4rem;
+
+    @include d.mq(tablet, max) {
+        align-self: center;
+    }
+
+    // .h-c__text
+
+    &__text {
+        padding-left: 1.6rem;
+        border-left: 2px solid d.$linkHover;
+        color: #00031a;
+        font-family: Montserrat;
+        font-size: 1.8rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 140%; /* 2.52rem */
+
+        @include d.mq(tablet, max) {
+            border: 0;
+            border-top: 2px solid d.$linkHover;
+            padding: 0;
+        }
+    }
+
+    // .h-c__contact-btn
+
+    &__contact-btn {
+        display: inline-flex;
+        padding: 1.2rem 10rem;
+        justify-content: center;
+        gap: 1rem;
+        border-radius: 1rem;
+        background: d.$linkHover;
+    }
+
+    // .h-c__contact-link
+
+    &__contact-link {
+        &:link,
+        &:visited {
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 2.1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+            @include d.mq(tablet, max) {
+                padding: 2rem;
+            }
+        }
+        &:hover,
+        &:active {
+        }
     }
 }
 
 .header {
-    align-self: center;
-    @include d.mq(tablet, max) {
-        display: flex;
-        align-items: center;
-    }
     padding: 0;
     padding-top: 6.5rem;
     width: 100%;
+    height: 100%;
+
+    @include d.mq(tablet, max) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        align-items: center;
+        justify-items: center;
+    }
 
     @include d.mq(phone, max) {
         padding: 6.5rem 6rem 0 6rem;
@@ -41,9 +146,6 @@
     // .header__menu
 
     &__menu {
-        @include d.mq(tablet, max) {
-            padding-left: 5rem;
-        }
     }
 }
 
@@ -51,7 +153,6 @@
     display: none;
     @include d.mq(tablet, max) {
         display: inline-block;
-        // transform: translateX(-50%);
         &__text {
             font-size: 5rem;
             font-weight: 700;
@@ -145,10 +246,13 @@
 
     &__list {
         width: 100%;
+        display: flex;
+        gap: 6rem;
 
         &._active {
             display: flex;
             flex-direction: column;
+            align-items: center;
             .menu__link {
                 &.logo {
                     margin: 0;
@@ -172,11 +276,6 @@
             }
         }
 
-        position: relative;
-        z-index: 10;
-        display: flex;
-        gap: 6rem;
-
         @include d.mq(tablet max) {
             align-items: center;
             flex-direction: column;
@@ -186,115 +285,27 @@
     // .menu__link
 
     &__link a {
-        @media (max-width: map_get(d.$bps, "tablet")) {
+        font-weight: 500;
+        font-size: 2rem;
+
+        @include d.mq(tablet, max) {
             .link__text {
                 font-size: 3.2rem;
             }
         }
+
         &:link,
         &:visited {
-            font-weight: 500;
-            font-size: 2rem;
             color: d.$dark;
-            transition: color 0.3s;
+            transition: all 0.3s;
         }
         &:hover,
         &:active {
-            font-weight: 500;
-            font-size: 2rem;
-            color: d.$primary;
+            color: d.$linkHover;
         }
     }
 }
 .icon-menu {
-}
-.hero {
-    // .hero__main-article
-
-    &__main-article {
-        display: flex;
-        align-items: center;
-        padding: 11.5rem 0rem 0rem 9rem;
-        gap: 4rem;
-        width: 76rem;
-        height: 28rem;
-    }
-
-    // .hero__main-title
-
-    &__main-title {
-        width: 32rem;
-        color: #00031a;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        font-family: Raleway;
-        font-size: 4.4rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 140%; /* 6.16rem */
-        letter-spacing: 0.132rem;
-        span {
-            color: #00031a;
-            font-family: Raleway;
-            font-size: 4.4rem;
-            font-style: normal;
-            font-weight: 700;
-            line-height: 140%;
-            letter-spacing: 0.132rem;
-        }
-    }
-
-    // .hero__contact
-
-    &__contact {
-    }
-}
-.h-c {
-    align-self: flex-start;
-    display: flex;
-    width: 31.6rem;
-    flex-direction: column;
-    gap: 2.2rem;
-
-    // .h-c__text
-
-    &__text {
-        padding-left: 1.6rem;
-        border-left: 2px solid d.$linkHover;
-        color: #00031a;
-        font-family: Montserrat;
-        font-size: 1.8rem;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 140%; /* 2.52rem */
-    }
-
-    // .h-c__contact-btn
-
-    &__contact-btn {
-        display: inline-flex;
-        padding: 1.2rem 10rem;
-        justify-content: center;
-        gap: 1rem;
-        border-radius: 1rem;
-        background: d.$linkHover;
-    }
-
-    // .h-c__contact-link
-
-    &__contact-link {
-        &:link,
-        &:visited {
-            color: #fff;
-            font-family: Montserrat;
-            font-size: 2.1rem;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-        }
-        &:hover,
-        &:active {
-        }
-    }
 }
 
 /*

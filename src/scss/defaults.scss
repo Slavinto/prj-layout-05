@@ -81,6 +81,7 @@ body {
 
 /*===========================================*/
 // Default styling classes
+
 ._centered {
     margin: 0 auto;
 }
@@ -103,11 +104,13 @@ body {
 %full-width-flex {
     align-self: stretch;
     display: flex;
-    flex: 1 1 auto;
-    width: 100%;
+    flex: 1 1 100%;
 }
 
 .wrapper {
+    background-image: url("../img/header-bg.svg");
+    background-repeat: no-repeat;
+    background-position-x: center;
     display: flex;
     align-items: center;
     position: relative;
