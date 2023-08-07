@@ -2,6 +2,13 @@
 
 $bps: maps.$breakpoints;
 
+@mixin background($image) {
+    background-image: url($image);
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-size: 144rem;
+}
+
 // To quickly centre a block element without having to worry about if there is any top or bottom margin already applied.
 
 @mixin push--auto {

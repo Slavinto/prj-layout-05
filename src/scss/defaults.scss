@@ -2,6 +2,7 @@
 @forward "colors";
 @forward "mixins";
 @forward "maps";
+@forward "placeholders";
 
 @use "fonts" as f;
 @use "colors" as c;
@@ -79,6 +80,21 @@ body {
     line-height: 2.4rem;
 }
 
+.text-common {
+    font-family: Montserrat;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2.9rem;
+    &__light {
+        color: #fff;
+    }
+
+    &__dark {
+        color: c.$dark;
+    }
+}
+
 /*===========================================*/
 // Default styling classes
 
@@ -97,53 +113,36 @@ body {
     }
 }
 
-._full-width {
-    align-self: stretch;
-}
-
-%full-width-flex {
-    align-self: stretch;
-    display: flex;
-    flex: 1 1 100%;
-}
-
 .wrapper {
-    background-image: url("../img/header-bg.svg");
-    background-repeat: no-repeat;
-    background-position-x: center;
     display: flex;
     align-items: center;
     position: relative;
     min-height: 100%;
     overflow: hidden;
     flex-direction: column;
-}
 
-%btn {
-    display: inline-block;
-    font-weight: 800;
-    font-size: 1rem;
-    padding: 1.5rem 2.8rem;
-    border-radius: 5px;
-    letter-spacing: 0.14em;
-}
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        width: 144rem;
+        height: 68.3rem;
+        @include m.background("../img/header-bg.svg");
+    }
 
-%icon-image {
-    object-position: center;
-    width: 1.8rem;
-    height: 1.8rem;
-    object-fit: none;
-}
-
-%overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.85);
-    z-index: 0;
-    color: c.$headerText;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        width: 144rem;
+        height: 47.1rem;
+        background-color: #2d3e74;
+        @include m.background("../img/footer-bg.svg");
+        background-size: 64.8rem;
+        background-position: bottom right 8rem;
+    }
 }
 
 main {
@@ -160,12 +159,9 @@ main {
 
 // Main adaptive container
 ._container {
-    @extend %container-current;
-}
-/*===========================================*/
-// Container current
-/*===========================================*/
-%container-current {
+    /*===========================================*/
+    // Container current
+    /*===========================================*/
     padding: 0 2rem;
     $w: $main-content-container + px;
 
@@ -218,5 +214,5 @@ main {
         // padding: 0;
         // margin: 0;
     }
+    /*===========================================*/
 }
-/*===========================================*/

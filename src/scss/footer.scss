@@ -1,19 +1,87 @@
+@use "defaults" as d;
+
 footer {
+    position: relative;
+    width: 100%;
+    height: 47.1rem;
+    display: grid;
+    grid-template-columns: 556fr 586fr;
+    padding: 10rem 0;
+}
+
+.footer-name {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    width: 31.6rem;
+    gap: 2rem;
 }
+.f-name {
+    // .f-name__header
 
-.footer-icons {
+    &__header {
+        font-weight: 500;
+        line-height: 2.24rem;
+    }
+
+    // .f-name__h-line
+
+    &__h-line {
+        width: 9.75rem;
+        height: 2px;
+        background-color: d.$linkHover;
+    }
+
+    // .f-name__motto
+
+    &__motto {
+        line-height: 1.9rem;
+    }
+
+    .h-c__contact-btn {
+        margin-top: 3rem;
+    }
+}
+.text-common {
+    // .text-common__light
+
+    &__light {
+    }
+}
+.h-c {
+    // .h-c__contact-btn
+
+    &__contact-btn {
+    }
+
+    // .h-c__contact-link
+
+    &__contact-link {
+    }
+}
+.footer-address {
+}
+.f-address {
     display: flex;
-    gap: 3.5rem;
-    padding-bottom: 2.6rem;
-}
+    flex-direction: column;
+    gap: 2rem;
 
-.footer-rights {
-    text-align: center;
-    font-weight: 400;
-    font-size: 1.4rem;
-    line-height: 2.1rem;
-    padding-bottom: 5.4rem;
+    // .f-address__header
+
+    &__header {
+        text-transform: uppercase;
+    }
+
+    // .f-address__contacts
+
+    &__contacts {
+        line-height: 2.38rem;
+    }
+}
+.footer {
+    // .footer__copyright
+
+    &__copyright {
+        position: absolute;
+        bottom: 5rem;
+    }
 }
