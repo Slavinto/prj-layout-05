@@ -23,14 +23,6 @@ footer {
         line-height: 2.24rem;
     }
 
-    // .f-name__h-line
-
-    &__h-line {
-        width: 9.75rem;
-        height: 2px;
-        background-color: d.$linkHover;
-    }
-
     // .f-name__motto
 
     &__motto {
@@ -84,4 +76,12 @@ footer {
         position: absolute;
         bottom: 5rem;
     }
+}
+
+// .h-line
+
+.h-line {
+    width: 9.75rem;
+    height: 2px;
+    background-color: d.$linkHover;
 }

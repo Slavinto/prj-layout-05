@@ -9,6 +9,13 @@
     letter-spacing: 0.14em;
 }
 
+%center-absolute {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
 %full-width-flex {
     align-self: stretch;
     display: flex;

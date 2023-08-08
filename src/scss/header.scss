@@ -128,7 +128,7 @@
     @include d.mq(tablet, max) {
         width: 100%;
         display: grid;
-        grid-template-columns: 1fr 5fr;
+        grid-template-columns: 1fr 21fr;
         align-items: center;
         justify-items: center;
     }
