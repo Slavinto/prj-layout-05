@@ -81,16 +81,22 @@ body {
 }
 
 .text-common {
-    font-family: Montserrat;
-    font-size: 1.6rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 2.9rem;
     &__light {
+        font-family: Montserrat;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 2.9rem;
+
         color: #fff;
     }
 
     &__dark {
+        font-family: Montserrat;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 2.9rem;
         color: c.$dark;
     }
 }

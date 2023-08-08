@@ -2,11 +2,17 @@
 
 $bps: maps.$breakpoints;
 
-@mixin background($image) {
-    background-image: url($image);
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-size: 144rem;
+@mixin background($image: #fff) {
+    @if type-of($image) == string {
+        background-image: url($image);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position-x: center;
+    }
+    @if type-of($image) == color {
+        background-color: $image;
+    }
+    // 144rem;
 }
 
 // To quickly centre a block element without having to worry about if there is any top or bottom margin already applied.
