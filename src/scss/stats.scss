@@ -18,15 +18,13 @@
     }
 
     .s-a {
+        height: 100%;
         // flex: 1 1 42rem;
     }
 
     // .stats__numbers
 
     &__numbers {
-        @include d.mq(tablet, max) {
-            text-align: center;
-        }
     }
 }
 .section {
@@ -67,9 +65,13 @@
     display: flex;
     flex-direction: column;
     flex: 0 1 53.2rem;
-    // max-width: 53.2rem;
     gap: 8rem;
     padding-top: 3.55rem;
+
+    @include d.mq(tablet, max) {
+        text-align: center;
+        flex: 1 1 auto;
+    }
 
     // .numbers__data-row
 

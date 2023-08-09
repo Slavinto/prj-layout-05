@@ -1,0 +1,135 @@
+@use "defaults" as d;
+
+.contact-form {
+    padding: 8rem;
+    height: 78.5rem;
+    @include d.background("../img/contact-form-bg.svg");
+    background-size: contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 0.5rem;
+
+    @include d.mq(desktop, max) {
+        @include d.background(d.$light);
+        border-radius: 3rem;
+    }
+
+    @include d.mq(tablet-wide, max) {
+        height: 108rem;
+    }
+}
+.c-f {
+    // .c-f__header
+
+    &__header {
+        color: #00031a;
+        font-family: Raleway;
+        font-size: 4.2rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 140%; /* 5.88rem */
+    }
+
+    // .c-f__text
+
+    &__text {
+        padding: 1.5rem 0;
+    }
+
+    // .c-f__form
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    // .c-f__row
+
+    &__row {
+        display: flex;
+        gap: 4rem;
+
+        @include d.mq(tablet-wide, max) {
+            flex-direction: column;
+            gap: 2rem;
+        }
+    }
+
+    // .c-f__input
+
+    &__input {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // .c-f__input-field
+
+    &__input-field {
+        width: 37.8rem;
+        height: 5rem;
+        border-radius: 1rem;
+        background: #fff;
+        border: 0;
+    }
+
+    // .c-f__label
+
+    &__label {
+        color: #00031a;
+        font-family: Montserrat;
+        font-size: 1.4rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 140%; /* 1.96rem */
+        text-transform: uppercase;
+        padding: 1.2rem 0;
+    }
+
+    // .c-f__input-area
+
+    &__input-area {
+        width: 79.6rem;
+        height: 9.3rem;
+        border-radius: 1rem;
+        background: #fff;
+        border: 0;
+        resize: none;
+
+        @include d.mq(tablet-wide, max) {
+            width: 100%;
+            min-width: 37.8rem;
+        }
+    }
+
+    // .c-f__submit-btn
+
+    &__submit-btn {
+        border: 0;
+        display: inline-flex;
+        padding: 1.2rem 10rem;
+        margin: 2rem 0;
+        align-items: flex-start;
+        gap: 1rem;
+        border-radius: 1rem;
+        background: #4541ff;
+        span {
+            color: #fff;
+            font-family: Montserrat;
+            font-size: 2.1rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        align-self: flex-start;
+    }
+}
+.arrow {
+}
+.text-common {
+    // .text-common__dark
+
+    &__dark {
+    }
+}
