@@ -70,6 +70,10 @@
     &__text {
         width: 28.9rem;
         line-height: 140%; /* 2.24rem */
+
+        @include d.mq(tablet, max) {
+            width: 53rem;
+        }
     }
 }
 .s-a-header {

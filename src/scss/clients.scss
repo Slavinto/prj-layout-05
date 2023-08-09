@@ -10,6 +10,22 @@
     align-items: center;
     gap: 7.6rem;
 
+    @include d.mq(desktop, max) {
+        // background-size: 100% 100rem;
+        @include d.background(d.$secondary);
+        border-radius: 3rem;
+    }
+
+    @include d.mq(tablet-wide, max) {
+        height: 114rem;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    @include d.mq(phone-wide, max) {
+        height: 120rem;
+    }
+
     // .clients__logos
 
     &__logos {
