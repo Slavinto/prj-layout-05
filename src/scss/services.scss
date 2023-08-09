@@ -2,6 +2,15 @@
 
 .services {
     display: flex;
+    gap: 16.9rem;
+
+    @include d.mq(desktop, max) {
+        gap: 14rem;
+    }
+
+    @include d.mq(tablet-wide, max) {
+        gap: 4rem;
+    }
 
     @include d.mq(tablet, max) {
         flex-direction: column;
@@ -21,7 +30,7 @@
     // .section__article
 
     &__article {
-        width: 50%;
+        flex: 1 1 42rem;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -68,7 +77,7 @@
     // .s-a__text
 
     &__text {
-        width: 28.9rem;
+        // width: 28.9rem;
         line-height: 140%; /* 2.24rem */
 
         @include d.mq(tablet, max) {
