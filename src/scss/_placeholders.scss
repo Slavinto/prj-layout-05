@@ -1,0 +1,97 @@
+@use "colors" as c;
+@use "mixins" as m;
+@use "variables" as v;
+
+%btn {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 1.5rem 2.8rem;
+    border-radius: 5px;
+    letter-spacing: 0.14em;
+}
+
+%center-absolute {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%full-width-flex {
+    align-self: stretch;
+    display: flex;
+    flex: 1 1 100%;
+}
+
+%icon-image {
+    object-position: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    object-fit: none;
+}
+
+%overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 0;
+    color: c.$headerText;
+}
+
+/*===========================================*/
+// Default styling classes
+/*===========================================*/
+%centered {
+    margin: 0 auto;
+}
+
+%mobile-link {
+    display: none;
+    @include m.mq(tablet, max) {
+        display: inline-block;
+    }
+}
+
+%wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+    flex-direction: column;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        width: 144rem;
+        height: 68.3rem;
+        @include m.background(v.$headerBg);
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+        width: 144rem;
+        height: 47.1rem;
+        background-color: #2d3e74;
+        @include m.background(v.$footerBg);
+        background-size: 64.8rem;
+        background-position: bottom right 8rem;
+    }
+}
+
+// adaptive image
+%adaptive {
+    width: 100%;
+    height: 100%;
+    object-position: 0 0;
+    object-fit: cover;
+}

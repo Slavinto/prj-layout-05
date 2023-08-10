@@ -1,10 +1,11 @@
-@forward "header";
-@forward "home";
-@forward "clients";
-@forward "contact-form";
-@forward "services";
-@forward "stats";
-@forward "footer";
+@use "header";
+@use "home";
+@use "footer";
+@use "form";
+
+.wrapper {
+    @extend %wrapper;
+}
 
 main {
     width: 100%;

@@ -1,6 +1,5 @@
 @use "maps";
-
-$bps: maps.$breakpoints;
+@use "variables" as v;
 
 @mixin background($image: #fff) {
     @if type-of($image) == string {
@@ -35,7 +34,7 @@ $bps: maps.$breakpoints;
 
 // A massive time saver! You can just use pixel values but we have some default breakpoints setup that work too, another time saver while keeping your breakpoints consistent.
 
-// $bps: (
+// v.$bps: (
 //     "phone": 400px,
 //     "phone-wide": 480px,
 //     "phablet": 560px,
@@ -47,8 +46,8 @@ $bps: maps.$breakpoints;
 // );
 
 @mixin mq($width, $type: min) {
-    @if map_has_key($bps, $width) {
-        $width: calc(map_get($bps, $width));
+    @if map_has_key(v.$bps, $width) {
+        $width: calc(map_get(v.$bps, $width));
         @if $type == max {
             $width: $width - 1px;
         }

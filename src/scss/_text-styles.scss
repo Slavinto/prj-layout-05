@@ -1,0 +1,17 @@
+@use "variables" as v;
+@use "colors" as c;
+/*===========================================*/
+// Text styles
+._text {
+    font-family: v.$fontFamily;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2.9rem;
+    &._light {
+        color: #fff;
+    }
+    &._dark {
+        color: c.$dark;
+    }
+}

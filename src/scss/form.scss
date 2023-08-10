@@ -1,42 +1,25 @@
-@use "defaults" as d;
+@use "partials" as p;
 
 .contact-form {
     padding: 8rem;
     height: 78.5rem;
-    @include d.background("../img/contact-form-bg.svg");
+    @include p.background("../img/contact-form-bg.svg");
     background-size: contain;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     gap: 0.5rem;
 
-    @include d.mq(desktop, max) {
-        @include d.background(d.$light);
+    @include p.mq(desktop, max) {
+        @include p.background(p.$light);
         border-radius: 3rem;
     }
 
-    @include d.mq(tablet-wide, max) {
+    @include p.mq(tablet-wide, max) {
         height: 108rem;
     }
 }
 .c-f {
-    // .c-f__header
-
-    &__header {
-        color: #00031a;
-        font-family: Raleway;
-        font-size: 4.2rem;
-        font-style: normal;
-        font-weight: 500;
-        line-height: 140%; /* 5.88rem */
-    }
-
-    // .c-f__text
-
-    &__text {
-        padding: 1.5rem 0;
-    }
-
     // .c-f__form
 
     &__form {
@@ -51,7 +34,7 @@
         display: flex;
         gap: 4rem;
 
-        @include d.mq(tablet-wide, max) {
+        @include p.mq(tablet-wide, max) {
             flex-direction: column;
             gap: 2rem;
         }
@@ -97,7 +80,7 @@
         border: 0;
         resize: none;
 
-        @include d.mq(tablet-wide, max) {
+        @include p.mq(tablet-wide, max) {
             width: 100%;
             min-width: 37.8rem;
         }

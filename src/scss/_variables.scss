@@ -1,0 +1,15 @@
+@use "maps";
+@use "colors" as c;
+/*===========================================*/
+// Variables
+/*===========================================*/
+$bps: maps.$breakpoints;
+$min-width: 320px;
+$wrapper: 2000;
+$main-content-container: 1144;
+// Default font-family
+$fontFamily: "Montserrat";
+$headerBg: c.$primary;
+$footerBg: c.$secondary;
+// $headerBg: "../img/header-bg.jpg";
+// $footerBg: "../img/footer-bg.jpg";

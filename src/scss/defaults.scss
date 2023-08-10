@@ -1,24 +1,10 @@
-@forward "fonts";
-@forward "colors";
-@forward "mixins";
-@forward "maps";
-@forward "placeholders";
-
-@use "fonts" as f;
-@use "colors" as c;
-@use "mixins" as m;
-@use "maps";
-
-/*===========================================*/
-// Variables
-/*===========================================*/
-$bps: maps.$breakpoints;
-$min-width: 320px;
-$wrapper: 2000;
-$main-content-container: 1144;
-
 /*===========================================*/
 //  Imports
+/*===========================================*/
+@use "partials" as p;
+
+/*===========================================*/
+// Initialize
 /*===========================================*/
 * {
     margin: 0;
@@ -37,25 +23,22 @@ html {
 
     font-size: calc(10 / 16) * 100% !important;
 
-    @media (max-width: map_get($bps, "desktop")) {
+    @include p.mq(desktop, max) {
         font-size: calc(10 / 16) * 100% !important;
     }
-    @media (max-width: map_get($bps, "tablet-wide")) {
+    @include p.mq(tablet-wide, max) {
         font-size: calc(8.5 / 16) * 100% !important;
     }
-    @media (max-width: map_get($bps, "tablet")) {
+    @include p.mq(tablet, max) {
         font-size: calc(7.5 / 16) * 100% !important;
     }
-    @media (max-width: map_get($bps, "phone-wide")) {
+    @include p.mq(phone-wide, max) {
         font-size: calc(6.5 / 16) * 100% !important;
     }
-    @media (max-width: map_get($bps, "phone")) {
+    @include p.mq(phone, max) {
         font-size: calc(6 / 16) * 100% !important;
     }
 }
-
-// Default font-family
-$fontFamily: "Montserrat";
 
 body {
     ul {
@@ -64,103 +47,11 @@ body {
     a {
         text-decoration: none;
     }
-    font-family: $fontFamily, sans-serif;
+    font-family: p.$fontFamily, sans-serif;
     line-height: 1;
     font-size: 1.2rem;
     font-weight: 400;
-    color: c.$dark;
-}
-
-/*===========================================*/
-
-/*===========================================*/
-// Text styles
-._text {
-    font-size: 1.6rem;
-    line-height: 2.4rem;
-}
-
-.text-common {
-    &__light {
-        font-family: Montserrat;
-        font-size: 1.6rem;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 2.9rem;
-
-        color: #fff;
-    }
-
-    &__dark {
-        font-family: Montserrat;
-        font-size: 1.6rem;
-        font-style: normal;
-        font-weight: 300;
-        line-height: 2.9rem;
-        color: c.$dark;
-    }
-}
-
-/*===========================================*/
-// Default styling classes
-
-._centered {
-    margin: 0 auto;
-}
-
-._dark {
-    color: c.$dark !important;
-}
-
-._mobile-link {
-    display: none;
-    @include m.mq(tablet, max) {
-        display: inline-block;
-    }
-}
-
-.wrapper {
-    display: flex;
-    align-items: center;
-    position: relative;
-    min-height: 100%;
-    overflow: hidden;
-    flex-direction: column;
-
-    &::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        z-index: -1;
-        width: 144rem;
-        height: 68.3rem;
-        @include m.background("../img/header-bg.svg");
-    }
-
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        z-index: -1;
-        width: 144rem;
-        height: 47.1rem;
-        background-color: #2d3e74;
-        @include m.background("../img/footer-bg.svg");
-        background-size: 64.8rem;
-        background-position: bottom right 8rem;
-    }
-}
-
-main {
-    flex: 1 1 auto;
-}
-
-// adaptive image
-._adaptive {
-    width: 100%;
-    height: 100%;
-    object-position: 0 0;
-    object-fit: cover;
+    color: p.$dark;
 }
 
 // Main adaptive container
@@ -169,14 +60,14 @@ main {
     // Container current
     /*===========================================*/
     padding: 0 2rem;
-    $w: $main-content-container + px;
+    $w: p.$main-content-container + px;
 
     // @media (width > map_get($bps, "desktop-wide")){
     //     // 1440px
     //     max-width: map_get($bps, "desktop-wide");
     // }
 
-    // @include m.mq(desktop-wide, max) {
+    // @include p.mq(desktop-wide, max) {
     //     //1248px
     //     max-width: map_get($bps, "desktop");
     // }
@@ -188,33 +79,33 @@ main {
     }
     /*===========================================*/
 
-    @include m.mq(desktop, max) {
+    @include p.mq(desktop, max) {
         //1024px
-        max-width: map_get($bps, "tablet-wide");
+        max-width: map_get(p.$bps, "tablet-wide");
     }
 
-    @include m.mq(tablet-wide, max) {
+    @include p.mq(tablet-wide, max) {
         //768px
-        max-width: map_get($bps, "tablet");
+        max-width: map_get(p.$bps, "tablet");
     }
 
-    @include m.mq(tablet, max) {
+    @include p.mq(tablet, max) {
         //640px
-        max-width: map_get($bps, "tablet-small");
+        max-width: map_get(p.$bps, "tablet-small");
     }
 
-    @include m.mq(tablet-small, max) {
+    @include p.mq(tablet-small, max) {
         //560px
-        max-width: map_get($bps, "phablet");
+        max-width: map_get(p.$bps, "phablet");
     }
 
-    @include m.mq(phablet, max) {
+    @include p.mq(phablet, max) {
         //480px
-        max-width: map_get($bps, "phone-wide");
+        max-width: map_get(p.$bps, "phone-wide");
     }
-    @include m.mq(phone-wide, max) {
+    @include p.mq(phone-wide, max) {
         //400px
-        max-width: map_get($bps, "phone");
+        max-width: map_get(p.$bps, "phone");
     }
     @media (width <= 380px) {
         // padding: 0;
