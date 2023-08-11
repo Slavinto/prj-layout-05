@@ -95,3 +95,17 @@
     object-position: 0 0;
     object-fit: cover;
 }
+
+%text {
+    font-family: v.$fontFamily;
+    font-size: 1.6rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 2.9rem;
+    &._light {
+        color: #fff;
+    }
+    &._dark {
+        color: c.$dark;
+    }
+}
