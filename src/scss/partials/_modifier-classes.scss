@@ -1,7 +1,8 @@
-@use "variables" as v;
+@use "colors" as c;
 @use "maps";
 @use "mixins" as m;
 @use "placeholders";
+@use "variables" as v;
 
 /*===========================================*/
 // Main adaptive container
@@ -72,5 +73,6 @@
 // Wrapper class
 ._wrapper {
     @extend %wrapper;
+    @include m.background(c.$dark);
 }
 /*===========================================*/
