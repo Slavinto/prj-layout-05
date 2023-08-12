@@ -4,12 +4,22 @@
     display: flex;
     flex-direction: column;
     gap: 8rem;
+
+    @include p.mq(tablet, max) {
+        gap: 0rem;
+    }
 }
 
 .header {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include p.mq(tablet, max) {
+        flex-direction: row-reverse;
+        justify-content: center;
+        position: relative;
+    }
 
     // .header__logo
 
@@ -22,6 +32,25 @@
     &__menu {
         padding: 3.1rem 8rem;
         background-color: p.$dark2;
+
+        @include p.mq(tablet, max) {
+            position: absolute;
+            top: 9rem;
+            left: -8.4rem;
+            background-color: p.$dark;
+            padding: 0;
+        }
+
+        @include p.mq(tablet-small, max) {
+            left: -13.4rem;
+        }
+
+        @include p.mq(phablet, max) {
+            left: -19.4rem;
+        }
+        @include p.mq(phone-wide, max) {
+            left: -27.4rem;
+        }
     }
 }
 .h-l {
@@ -72,7 +101,7 @@
                 position: absolute;
                 width: 100%;
                 height: 2px;
-                background-color: p.$dark;
+                background-color: p.$active;
                 &:first-child {
                     top: 1px;
                 }
@@ -113,8 +142,8 @@
             left: 0;
             align-items: center;
             justify-content: center;
-            background-color: p.$lightOverlay;
-            z-index: 1;
+            background-color: p.$darkOverlay;
+            z-index: 3;
             transition: all 0.4s ease-out;
             overflow: auto;
 
@@ -191,6 +220,17 @@
     &__article {
         display: flex;
         gap: 12.9rem;
+
+        @include p.mq(tablet-wide, max) {
+            flex-direction: column;
+            gap: 2rem;
+            position: relative;
+        }
+
+        @include p.mq(tablet, max) {
+            align-items: center;
+            justify-content: center;
+        }
     }
 
     // .hero__contact
@@ -200,7 +240,26 @@
         display: flex;
         align-items: flex-start;
         flex-direction: column;
-        gap: 5rem;
+        gap: 3.5rem;
+
+        padding-top: 2.5rem;
+
+        @include p.mq(tablet-wide, max) {
+            position: absolute;
+            padding: 8rem;
+            z-index: 2;
+            width: 80%;
+        }
+
+        @include p.mq(tablet, max) {
+            text-align: center;
+            align-items: center;
+            padding: 0rem;
+        }
+
+        @include p.mq(tablet-small, max) {
+            justify-content: center;
+        }
     }
 
     // .hero__header
@@ -222,9 +281,31 @@
         @extend %btn;
     }
 
+    // .hero__overlay
+
+    &__overlay {
+        @extend %overlay;
+        display: none;
+        @include p.mq(tablet-wide, max) {
+            display: block;
+            position: absolute;
+            z-index: 1;
+        }
+    }
+
     // .hero__image
 
     &__image {
+        position: relative;
+        z-index: 0;
+        display: flex;
+        justify-content: center;
+        img {
+            position: relative;
+            z-index: 0;
+            // transform: translateX(-1px);
+        }
+        // @include p.responsive-image(75.5rem);
     }
 }
 
