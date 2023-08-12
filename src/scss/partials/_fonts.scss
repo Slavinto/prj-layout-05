@@ -1,39 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:300,regular,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Raleway:200,300,regular,600);
+@import url(https://fonts.googleapis.com/css?family=Varela:regular);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+3:300,600);
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:500);
+// Default font-family
+$fontByDefault: "Raleway", sans-serif;
 
-// $fCerem: "Ceremonious One";
-// $fPf: "PF Din Text Cond Pro";
-
-// @font-face {
-//     font-family: "Ceremonious One";
-//     font-display: swap;
-//     src: url("../fonts/ceremonious_one.woff2") format("woff2"),
-//         url("../fonts/ceremonious_one");
-//     font-weight: 400;
-//     font-style: normal;
-// }
-// @font-face {
-//     font-family: "Bravo RG";
-//     font-display: swap;
-//     src: url("../fonts/BravoRGRegular.woff2") format("woff2"),
-//         url("../fonts/BravoRGRegular");
-//     font-weight: 400;
-//     font-style: normal;
-// }
-// @font-face {
-//     font-family: "PF Din Text Cond Pro";
-//     font-display: swap;
-//     src: url("../fonts/pfdintextcondpro-medium.woff2") format("woff2"),
-//         url("../fonts/pfdintextcondpro-medium");
-//     font-weight: 500;
-//     font-style: normal;
-// }
-// @font-face {
-//     font-family: "PF Din Text Cond Pro";
-//     font-display: swap;
-//     src: url("../fonts/pfdintextcondpro-regular.woff2") format("woff2"),
-//         url("../fonts/pfdintextcondpro-regular");
-//     font-weight: 400;
-//     font-style: normal;
-// }
+$varela: "Varela", sans-serif;
+$source: "Source Sans 3", sans-serif;
+/*===========================*/

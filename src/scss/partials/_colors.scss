@@ -4,15 +4,18 @@
 $primary: #ff6464;
 $primaryShade1: #e65a5a;
 
-$secondary: #2d3e74;
+$dark2: #332f3d;
 $dark: #26232c;
+$active: #c3dd4f;
 $darkOverlay: rgb(28, 36, 42, 0.95);
 $darkOverlay2: rgb(28, 36, 42, 0.6);
 $mainOverlay: rgba(187, 156, 102, 0.97);
 $light: #c6e1f9;
 $lightOverlay: rgba(198, 225, 249, 0.98);
+
+$invisibleColor: rgba(255, 255, 255, 0);
 /*===========================================*/
 // Text
 /*===========================================*/
-$headerText: #fff;
+$white: #fff;
 $linkHover: #4541ff;

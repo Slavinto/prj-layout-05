@@ -3,12 +3,9 @@
 @use "variables" as v;
 
 %btn {
-    display: inline-block;
-    font-weight: 800;
-    font-size: 1rem;
-    padding: 1.5rem 2.8rem;
-    border-radius: 5px;
-    letter-spacing: 0.14em;
+    display: flex;
+    padding: 2rem 9rem;
+    background-color: c.$active;
 }
 
 %center-absolute {
@@ -39,7 +36,7 @@
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.85);
     z-index: 0;
-    color: c.$headerText;
+    color: c.$white;
 }
 
 /*===========================================*/
@@ -57,12 +54,15 @@
 }
 
 %wrapper {
-    display: flex;
-    align-items: center;
+    height: 100%;
+    width: 144rem;
+    margin: 0 auto;
     position: relative;
-    min-height: 100%;
     overflow: hidden;
+
+    display: flex;
     flex-direction: column;
+    align-items: center;
 
     &::before {
         content: "";
@@ -94,18 +94,4 @@
     height: 100%;
     object-position: 0 0;
     object-fit: cover;
-}
-
-%text {
-    font-family: v.$fontFamily;
-    font-size: 2.2rem;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 3.08rem;
-    &._light {
-        color: #fff;
-    }
-    &._dark {
-        color: c.$dark;
-    }
 }

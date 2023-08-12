@@ -42,15 +42,17 @@ html {
 }
 
 body {
+    height: 100vmax;
     ul {
         list-style-type: none;
     }
     a {
         text-decoration: none;
     }
-    font-family: p.$fontFamily, sans-serif;
+
+    font-family: p.$fontByDefault;
     line-height: 1;
     font-size: 1.2rem;
     font-weight: 400;
-    color: p.$dark;
+    color: p.$white;
 }

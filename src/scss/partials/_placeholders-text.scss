@@ -1,0 +1,58 @@
+@use "colors" as c;
+@use "fonts" as f;
+@use "mixins" as m;
+@use "variables" as v;
+
+%normal-text {
+    font-style: normal;
+    line-height: normal;
+    color: c.$white;
+}
+
+%cta {
+    @extend %normal-text;
+    color: c.$dark2;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+%hero-header {
+    @extend %normal-text;
+    font-size: 5.2rem;
+    font-weight: 200;
+    line-height: 6.76rem;
+    text-transform: uppercase;
+}
+
+%hero-text {
+    @extend %normal-text;
+    font-family: f.$source;
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 3.08rem;
+}
+
+%text {
+    @extend %normal-text;
+    font-size: 2.2rem;
+    font-weight: 300;
+    line-height: 3.08rem;
+}
+
+%logo-text {
+    @extend %normal-text;
+    font-family: "Varela";
+    font-size: 2.2rem;
+    font-weight: 400;
+}
+
+%top-menu-text {
+    @extend %normal-text;
+    font-size: 1.4rem;
+    font-weight: 300;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+}

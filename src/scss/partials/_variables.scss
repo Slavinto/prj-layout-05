@@ -5,12 +5,10 @@
 /*===========================================*/
 $bps: maps.$breakpoints;
 $main-content-container: 1140;
+
 /*===========================*/
-// Default font-family
-$fontFamily: "Raleway";
-/*===========================*/
-$headerBg: rgba(255, 255, 255, 0);
-$footerBg: rgba(255, 255, 255, 0);
+$headerBg: c.$invisibleColor;
+$footerBg: c.$invisibleColor;
 // $headerBg: c.$primary;
 // $footerBg: c.$secondary;
 // $headerBg: "../img/header-bg.jpg";
