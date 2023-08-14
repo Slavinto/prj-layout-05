@@ -2,17 +2,18 @@
 @use "mixins" as m;
 @use "variables" as v;
 
+// adaptive image
+%adaptive {
+    width: 100%;
+    height: 100%;
+    object-position: 0 0;
+    object-fit: cover;
+}
+
 %btn {
     display: flex;
     padding: 2rem 9rem;
     background-color: c.$active;
-}
-
-%center-absolute {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 %full-width-flex {
@@ -86,12 +87,4 @@
         background-size: 64.8rem;
         background-position: bottom right 8rem;
     }
-}
-
-// adaptive image
-%adaptive {
-    width: 100%;
-    height: 100%;
-    object-position: 0 0;
-    object-fit: cover;
 }

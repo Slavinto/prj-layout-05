@@ -16,8 +16,7 @@
     align-items: center;
 
     @include p.mq(tablet, max) {
-        flex-direction: row-reverse;
-        justify-content: center;
+        justify-content: flex-start;
         position: relative;
     }
 
@@ -25,6 +24,10 @@
 
     &__logo {
         padding: 4.4rem 0rem;
+
+        @include p.mq(tablet, max) {
+            @include p.center-absolute;
+        }
     }
 
     // .header__menu
@@ -34,22 +37,9 @@
         background-color: p.$dark2;
 
         @include p.mq(tablet, max) {
-            position: absolute;
-            top: 9rem;
-            left: -5.4rem;
+            align-self: flex-start;
             background-color: p.$dark;
-            padding: 0;
-        }
-
-        @include p.mq(tablet-small, max) {
-            left: -10.4rem;
-        }
-
-        @include p.mq(phablet, max) {
-            left: -16.4rem;
-        }
-        @include p.mq(phone-wide, max) {
-            left: -24.4rem;
+            padding: 8rem;
         }
     }
 }
@@ -267,6 +257,15 @@
 
     &__header {
         @extend %hero-header;
+    }
+
+    // .hero__header
+    &__header-br {
+        display: none;
+
+        @include p.mq(tablet, max) {
+            display: inline;
+        }
     }
 
     // .hero__text

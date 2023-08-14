@@ -11,7 +11,6 @@
     /*===========================================*/
     // Container current
     /*===========================================*/
-    padding: 0 2rem;
     $w: v.$main-content-container + px;
 
     // @media (width > map_get($bps, "desktop-wide")){
@@ -65,11 +64,6 @@
     }
 }
 
-/*===========================================*/
-// Text styles
-._text {
-    @extend %text;
-}
 /*===========================================*/
 // Wrapper class
 ._wrapper {

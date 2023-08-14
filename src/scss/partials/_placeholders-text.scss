@@ -2,12 +2,20 @@
 @use "fonts" as f;
 @use "mixins" as m;
 @use "variables" as v;
-
+// ==common-text-templates===
 %normal-text {
     font-style: normal;
     line-height: normal;
     color: c.$white;
 }
+
+%text-light {
+    @extend %normal-text;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 2.52rem;
+}
+// ==========================
 
 %cta {
     @extend %normal-text;
@@ -33,6 +41,20 @@
     font-size: 2.2rem;
     font-weight: 300;
     line-height: 3.08rem;
+}
+
+%section-header {
+    @extend %normal-text;
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+    padding: 0 0.5rem;
+}
+
+%text-light-cap {
+    @extend %text-light;
+    text-transform: uppercase;
 }
 
 %text {
