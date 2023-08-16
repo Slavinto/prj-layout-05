@@ -303,9 +303,11 @@
         img {
             position: relative;
             z-index: 0;
-            // transform: translateX(-1px);
+
+            @include p.mq(tablet, max) {
+                @include p.adaptive;
+            }
         }
-        // @include p.responsive-image(75.5rem);
     }
 }
 

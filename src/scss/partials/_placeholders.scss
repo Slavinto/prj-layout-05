@@ -1,14 +1,7 @@
 @use "colors" as c;
 @use "mixins" as m;
 @use "variables" as v;
-
-// adaptive image
-%adaptive {
-    width: 100%;
-    height: 100%;
-    object-position: 0 0;
-    object-fit: cover;
-}
+@use "placeholders-text" as pt;
 
 %btn {
     display: flex;
@@ -41,6 +34,29 @@
 }
 
 /*===========================================*/
+// Custom pattern styling classes
+/*===========================================*/
+%header-with-line {
+    position: relative;
+    width: 2.5rem;
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: center;
+
+    .__line {
+        position: absolute;
+        background-color: c.$white;
+        transform: translateX(-90%);
+        height: 0.2rem;
+    }
+
+    .__header {
+        @extend %section-header;
+    }
+}
+
+/*===========================================*/
 // Default styling classes
 /*===========================================*/
 %centered {
@@ -55,7 +71,6 @@
 }
 
 %wrapper {
-    height: 100%;
     width: 144rem;
     margin: 0 auto;
     position: relative;

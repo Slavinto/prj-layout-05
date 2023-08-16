@@ -2,12 +2,13 @@
 @use "home";
 @use "mission";
 @use "values";
+@use "services";
 @use "footer";
 @use "form";
 
 main {
-    width: 100%;
-    height: 100%;
+    // width: 100%;
+    // height: 100%;
     display: flex;
     flex-direction: column;
     gap: 9rem;
