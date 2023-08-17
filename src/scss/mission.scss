@@ -20,6 +20,10 @@
         width: 45.6rem;
 
         @include p.mq(tablet-wide, max) {
+            width: 71rem;
+        }
+
+        @include p.mq(phablet, max) {
             width: 56rem;
         }
     }
@@ -32,6 +36,13 @@
         align-items: center;
         justify-content: center;
 
+        @include p.mq(tablet-wide, max) {
+            width: 71rem;
+        }
+
+        @include p.mq(phablet, max) {
+            width: 56rem;
+        }
         img {
             @include p.adaptive;
         }
@@ -51,18 +62,14 @@
     // .m-a__header
 
     &__header {
-        @extend %section-header;
+        @include p.section-header;
         align-self: flex-start;
-
-        @include p.mq(tablet-wide, max) {
-            align-self: center;
-        }
     }
 
     // .m-a__text
 
     &__text {
-        @extend %text-light;
+        @include p.text-light;
         font-family: p.$source;
     }
 }

@@ -2,23 +2,41 @@
 @use "fonts" as f;
 @use "mixins" as m;
 @use "variables" as v;
-// ==common-text-templates===
-%normal-text {
+
+//===common-text-templates===
+
+@mixin normal-text {
     font-style: normal;
     line-height: normal;
     color: c.$white;
 }
 
-%text-light {
-    @extend %normal-text;
+@mixin text-light {
+    @include normal-text;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 2.52rem;
+}
+// ==========================
+@mixin test {
+    @include normal-text();
+    font-family: f.$source;
     font-size: 1.8rem;
     font-weight: 300;
     line-height: 2.52rem;
 }
 // ==========================
 
-%cta {
-    @extend %normal-text;
+@mixin article-header {
+    @include normal-text();
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.16rem;
+    text-transform: uppercase;
+}
+
+@mixin cta {
+    @include normal-text;
     color: c.$dark2;
     text-align: center;
     font-size: 1.6rem;
@@ -27,52 +45,56 @@
     text-transform: uppercase;
 }
 
-%hero-header {
-    @extend %normal-text;
+@mixin hero-header {
+    @include normal-text;
     font-size: 5.2rem;
     font-weight: 200;
     line-height: 6.76rem;
     text-transform: uppercase;
 }
 
-%hero-text {
-    @extend %normal-text;
+@mixin hero-text {
+    @include normal-text;
     font-family: f.$source;
     font-size: 2.2rem;
     font-weight: 300;
     line-height: 3.08rem;
 }
 
-%section-header {
-    @extend %normal-text;
+@mixin section-header {
+    @include normal-text;
     font-size: 2.5rem;
     font-weight: 600;
     line-height: 3.5rem;
     text-transform: uppercase;
     padding: 0 0.5rem;
+
+    @include m.mq(tablet-wide, max) {
+        align-self: center;
+    }
 }
 
-%text-light-cap {
-    @extend %text-light;
+@mixin text-light-cap {
+    @include text-light;
     text-transform: uppercase;
 }
 
-%text {
-    @extend %normal-text;
+@mixin text {
+    @include normal-text;
     font-size: 2.2rem;
     font-weight: 300;
     line-height: 3.08rem;
 }
 
-%logo-text {
-    @extend %normal-text;
+@mixin logo-text {
+    @include normal-text;
     font-family: "Varela";
     font-size: 2.2rem;
     font-weight: 400;
 }
 
-%top-menu-text {
-    @extend %normal-text;
+@mixin top-menu-text {
+    @include normal-text;
     font-size: 1.4rem;
     font-weight: 300;
     letter-spacing: 0.7px;

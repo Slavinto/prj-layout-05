@@ -67,7 +67,7 @@
     // .h-l__text
 
     &__text {
-        @extend %logo-text;
+        @include p.logo-text;
     }
 }
 
@@ -187,7 +187,7 @@
     // .menu__link
 
     &__link a {
-        @extend %top-menu-text;
+        @include p.top-menu-text;
 
         &:link,
         &:visited {
@@ -256,7 +256,7 @@
     // .hero__header
 
     &__header {
-        @extend %hero-header;
+        @include p.hero-header;
     }
 
     // .hero__header
@@ -271,20 +271,20 @@
     // .hero__text
 
     &__text {
-        @extend %hero-text;
+        @include p.hero-text;
     }
 
     // .hero__cta
 
     &__cta {
-        @extend %cta;
-        @extend %btn;
+        @include p.cta;
+        @include p.btn;
     }
 
     // .hero__overlay
 
     &__overlay {
-        @extend %overlay;
+        @include p.overlay;
         display: none;
         @include p.mq(tablet-wide, max) {
             display: block;

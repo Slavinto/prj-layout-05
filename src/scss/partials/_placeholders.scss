@@ -3,26 +3,30 @@
 @use "variables" as v;
 @use "placeholders-text" as pt;
 
-%btn {
+@mixin btn {
     display: flex;
     padding: 2rem 9rem;
     background-color: c.$active;
+
+    @include m.mq(tablet-wide, max) {
+        align-self: center;
+    }
 }
 
-%full-width-flex {
+@mixin full-width-flex {
     align-self: stretch;
     display: flex;
     flex: 1 1 100%;
 }
 
-%icon-image {
+@mixin icon-image {
     object-position: center;
     width: 1.8rem;
     height: 1.8rem;
     object-fit: none;
 }
 
-%overlay {
+@mixin overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,7 +40,7 @@
 /*===========================================*/
 // Custom pattern styling classes
 /*===========================================*/
-%header-with-line {
+@mixin header-with-line {
     position: relative;
     width: 2.5rem;
     display: flex;
@@ -47,30 +51,29 @@
     .__line {
         position: absolute;
         background-color: c.$white;
-        transform: translateX(-90%);
         height: 0.2rem;
     }
 
     .__header {
-        @extend %section-header;
+        @include pt.section-header;
     }
 }
 
 /*===========================================*/
 // Default styling classes
 /*===========================================*/
-%centered {
+@mixin centered {
     margin: 0 auto;
 }
 
-%mobile-link {
+@mixin mobile-link {
     display: none;
     @include m.mq(tablet, max) {
         display: inline-block;
     }
 }
 
-%wrapper {
+@mixin wrapper {
     width: 144rem;
     margin: 0 auto;
     position: relative;

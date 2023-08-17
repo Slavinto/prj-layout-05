@@ -7,17 +7,19 @@
     padding: 15rem 0rem;
 
     @include p.mq(tablet-wide, max) {
-        display: grid;
-        grid-template-columns: auto 90fr;
+        // display: grid;
+        // grid-template-columns: auto 90fr;
+        // padding: 0rem;
+        // gap: 2rem;
+        // margin: 0 auto;
+        flex-direction: column;
         padding: 0rem;
-        gap: 2rem;
-        margin: 0 auto;
     }
 
     // .values__name
 
     &__name {
-        @extend %header-with-line;
+        @include p.header-with-line;
 
         transform: rotate(-90deg) translateX(23rem);
 
@@ -26,27 +28,33 @@
         }
 
         @include p.mq(tablet-wide, max) {
+            transform: rotate(0deg) translateX(0rem);
             justify-self: start;
-        }
-
-        @include p.mq(phablet, max) {
-            transform: rotate(-90deg) translateX(10rem);
         }
     }
 
     // .values__line
 
     &__line {
+        transform: translateX(-90%);
+
         width: 27.4rem;
 
         @include p.mq(desktop, max) {
             width: 24.4rem;
+        }
+
+        @include p.mq(tablet-wide, max) {
+            display: none;
         }
     }
 
     // .values__header
 
     &__header {
+        @include p.mq(tablet-wide, max) {
+            @include p.section-header;
+        }
     }
 
     // .values__cards
@@ -59,7 +67,7 @@
         @include p.mq(tablet-wide, max) {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 9rem;
         }
 
         @include p.mq(phablet, max) {
@@ -98,7 +106,7 @@
     // .v-c__name
 
     &__name {
-        @extend %text-light;
+        @include p.text-light;
         text-transform: uppercase;
     }
 

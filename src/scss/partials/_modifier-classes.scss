@@ -67,7 +67,7 @@
 /*===========================================*/
 // Wrapper class
 ._wrapper {
-    @extend %wrapper;
+    @include placeholders.wrapper;
     @include m.background(c.$dark);
 }
 /*===========================================*/

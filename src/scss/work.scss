@@ -1,0 +1,73 @@
+@use "partials" as p;
+
+.work {
+    display: flex;
+    flex-direction: column;
+
+    // .work_header
+
+    &_header {
+        @include p.section-header;
+        padding-bottom: 5rem;
+    }
+
+    // .work__works
+
+    &__works {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 8rem;
+        column-gap: 2rem;
+
+        @include p.mq(tablet, max) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // .work__article
+
+    &__article {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+
+        @include p.mq(tablet, max) {
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    // .work__foto-container
+
+    &__foto-container {
+        max-width: 56rem;
+        // height: 40.7rem;
+    }
+
+    // .work__image
+
+    &__image {
+        @include p.adaptive;
+    }
+
+    // .work__article-header
+
+    &__article-header {
+        @include p.article-header;
+    }
+
+    // .work__article-text
+
+    &__article-text {
+        @include p.text-light;
+        font-family: p.$source;
+    }
+
+    // .work__article-cta
+
+    &__article-cta {
+        @include p.btn;
+        @include p.cta;
+        align-self: flex-start;
+    }
+}
