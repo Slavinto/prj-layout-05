@@ -1,25 +1,32 @@
 @use "partials" as p;
 
 .contact-form {
-    padding: 8rem;
-    height: 78.5rem;
-    @include p.background("../img/contact-form-bg.svg");
-    background-size: contain;
+    @include p.background(p.$active);
+    padding: 10rem 0rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     gap: 0.5rem;
 
     @include p.mq(desktop, max) {
-        @include p.background(p.$light);
         border-radius: 3rem;
     }
 
     @include p.mq(tablet-wide, max) {
-        height: 108rem;
+        height: 100%;
+        gap: 1rem;
+        padding: 9rem 0rem;
     }
 }
 .c-f {
+    // .c-f__header
+
+    &__header {
+        @include p.form-header;
+        padding-bottom: 3rem;
+    }
+
     // .c-f__form
 
     &__form {
@@ -32,11 +39,13 @@
 
     &__row {
         display: flex;
-        gap: 4rem;
+        gap: 1.5rem;
+        justify-content: center;
 
         @include p.mq(tablet-wide, max) {
             flex-direction: column;
             gap: 2rem;
+            align-items: center;
         }
     }
 
@@ -50,35 +59,56 @@
     // .c-f__input-field
 
     &__input-field {
-        width: 37.8rem;
+        width: 30.5rem;
         height: 5rem;
-        border-radius: 1rem;
-        background: #fff;
-        border: 0;
+        border: 0.5px solid p.$dark;
+        @include p.background(p.$active);
     }
 
     // .c-f__label
 
     &__label {
-        color: #00031a;
-        font-family: Montserrat;
-        font-size: 1.4rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 140%; /* 1.96rem */
-        text-transform: uppercase;
-        padding: 1.2rem 0;
+        @include p.form-text-dark;
+        padding-bottom: 0.5rem;
+    }
+
+    // .c-f__input-container
+
+    &__input-container {
+        width: 30.5rem;
+        height: 5rem;
+        position: relative;
+
+        &.__area {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    // .c-f__input-wrapper
+
+    &__input-overlay {
+        @include p.overlay(p.$formOverlay);
     }
 
     // .c-f__input-area
 
     &__input-area {
-        width: 79.6rem;
-        height: 9.3rem;
-        border-radius: 1rem;
-        background: #fff;
-        border: 0;
+        z-index: 0;
+        width: 62.5rem;
+        height: 14.5rem;
+        border: 0.5px solid p.$dark;
+        @include p.background(p.$active);
         resize: none;
+
+        &::before {
+            content: "";
+            @include p.overlay(p.$formOverlay);
+            z-index: 1;
+            width: 10rem;
+            height: 10rem;
+            // @include p.background(p.$formOverlay);
+        }
 
         @include p.mq(tablet-wide, max) {
             width: 100%;
@@ -89,23 +119,11 @@
     // .c-f__submit-btn
 
     &__submit-btn {
-        border: 0;
-        display: inline-flex;
-        padding: 1.2rem 10rem;
-        margin: 2rem 0;
-        align-items: flex-start;
-        gap: 1rem;
-        border-radius: 1rem;
-        background: #4541ff;
-        span {
-            color: #fff;
-            font-family: Montserrat;
-            font-size: 2.1rem;
-            font-style: normal;
-            font-weight: 400;
-            line-height: normal;
-        }
-        align-self: flex-start;
+        @include p.cta;
+        @include p.btn;
+        @include p.background(p.$dark);
+        color: p.$active;
+        // font-family: p.$fontByDefault;
     }
 }
 .arrow {

@@ -1,37 +1,60 @@
 <section class="contact-form c-f">
+    <h2 class="c-f__header">Let’s have a chat</h2>
     <form action="" class="c-f__form">
         <div class="c-f__row">
             <div class="c-f__input">
-                <label for="first-name" class="c-f__label"> First Name </label>
-                <input type="text" class="c-f__input-field" name="first-name" />
+                <label for="first-name" class="c-f__label"> First Name* </label>
+                <div class="c-f__input-container">
+                    <div class="c-f__input-overlay"></div>
+                    <input
+                        type="text"
+                        class="c-f__input-field"
+                        name="first-name"
+                    />
+                </div>
             </div>
             <div class="c-f__input">
-                <label for="last-name" class="c-f__label"> Last Name </label>
-                <input type="text" class="c-f__input-field" name="last-name" />
+                <label for="last-name" class="c-f__label">Last Name*</label>
+                <div class="c-f__input-container">
+                    <div class="c-f__input-overlay"></div>
+                    <input
+                        type="text"
+                        class="c-f__input-field"
+                        name="last-name"
+                    />
+                </div>
             </div>
         </div>
         <div class="c-f__row">
             <div class="c-f__input">
-                <label for="email" class="c-f__label"> Email </label>
-                <input type="email" class="c-f__input-field" name="email" />
+                <label for="email" class="c-f__label">Email Address*</label>
+                <div class="c-f__input-container">
+                    <div class="c-f__input-overlay"></div>
+                    <input type="email" class="c-f__input-field" name="email" />
+                </div>
             </div>
             <div class="c-f__input">
-                <label for="phone" class="c-f__label"> Phone </label>
-                <input type="tel" class="c-f__input-field" name="phone" />
+                <label for="phone" class="c-f__label">Phone Number*</label>
+                <div class="c-f__input-container">
+                    <div class="c-f__input-overlay"></div>
+                    <input type="tel" class="c-f__input-field" name="phone" />
+                </div>
             </div>
         </div>
         <div class="c-f__row">
             <div class="c-f__input">
-                <label for="details" class="c-f__label">
-                    Additional Details
-                </label>
-                <textarea
-                    class="c-f__input-area"
-                    name="details"
-                    rows="2"
-                    cols="40"
-                >
-                </textarea>
+                <label for="details" class="c-f__label"> Message* </label>
+                <div class="c-f__input-container __area">
+                    <div class="c-f__input-overlay"></div>
+
+                    <textarea
+                        class="c-f__input-area"
+                        name="details"
+                        rows="2"
+                        cols="40"
+                    >
+                    </textarea>
+                </div>
             </div>
         </div>
         <div class="c-f__row">

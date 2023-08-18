@@ -49,9 +49,15 @@ body {
         text-decoration: none;
     }
 
-    font-family: p.$fontByDefault;
     line-height: 1;
     font-size: 1.2rem;
     font-weight: 400;
     color: p.$white;
+}
+
+body,
+input,
+textarea,
+button {
+    font-family: p.$fontByDefault;
 }

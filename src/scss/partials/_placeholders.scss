@@ -26,15 +26,17 @@
     object-fit: none;
 }
 
-@mixin overlay {
+@mixin overlay($color: c.$darkOverlay2) {
     position: absolute;
+    box-sizing: inherit;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: c.$darkOverlay2;
     z-index: 0;
+    background-color: $color;
     color: c.$white;
+    pointer-events: none;
 }
 
 /*===========================================*/
@@ -74,7 +76,7 @@
 }
 
 @mixin wrapper {
-    width: 144rem;
+    width: v.$wrapper-width + rem;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -88,7 +90,7 @@
         position: absolute;
         top: 0;
         z-index: -1;
-        width: 144rem;
+        width: v.$wrapper-width;
         height: 68.3rem;
         @include m.background(v.$headerBg);
     }
@@ -98,7 +100,7 @@
         position: absolute;
         bottom: 0;
         z-index: -1;
-        width: 144rem;
+        width: v.$wrapper-width;
         height: 47.1rem;
         background-color: #2d3e74;
         @include m.background(v.$footerBg);

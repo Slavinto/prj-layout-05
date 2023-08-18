@@ -1,0 +1,15 @@
+@use "partials" as p;
+
+.chat {
+    position: relative;
+    overflow: visible;
+    &__container-full {
+        $margin: calc((p.$wrapper-width - p.$main-content-container-rem) / 2);
+        margin: 0 (-$margin + rem);
+        @include p.background(p.$active);
+    }
+
+    &__form {
+        @include p.centered;
+    }
+}

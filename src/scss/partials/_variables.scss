@@ -5,6 +5,8 @@
 /*===========================================*/
 $bps: maps.$breakpoints;
 $main-content-container: 1140;
+$main-content-container-rem: calc($main-content-container/10);
+$wrapper-width: 144;
 
 /*===========================*/
 $headerBg: c.$invisibleColor;
