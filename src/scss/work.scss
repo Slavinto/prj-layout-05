@@ -41,7 +41,10 @@
 
     &__foto-container {
         max-width: 56rem;
-        // height: 40.7rem;
+
+        @include p.mq(tablet-wide, max) {
+            max-width: 100%;
+        }
     }
 
     // .work__image

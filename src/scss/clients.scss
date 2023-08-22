@@ -1,0 +1,71 @@
+@use "partials" as p;
+
+.clients {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+
+    // .clients__header
+
+    &__header {
+        @include p.section-header;
+    }
+
+    // .clients__clients-container
+
+    &__clients-container {
+        display: flex;
+        gap: 2rem;
+
+        @include p.mq(tablet-wide, max) {
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: flex-start;
+        }
+    }
+
+    // .clients__client
+
+    &__client {
+        @include p.background(p.$white);
+        width: 21.2rem;
+        height: 21.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // .client-image
+
+    &__client-image {
+    }
+
+    .services {
+        // .services__arrow
+
+        &__arrow {
+        }
+    }
+    .s-a {
+        // .s-a__thick-line
+
+        &__thick-line {
+            max-width: 45.7rem;
+        }
+
+        // .s-a__thin-line
+
+        &__thin-line {
+        }
+
+        // .s-a__head
+
+        &__head {
+        }
+
+        // .s-a__btn
+
+        &__btn {
+        }
+    }
+}

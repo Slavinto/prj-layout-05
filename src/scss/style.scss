@@ -1,3 +1,4 @@
+@use "defaults";
 @use "header";
 @use "home";
 @use "mission";
@@ -5,6 +6,9 @@
 @use "services";
 @use "work";
 @use "chat";
+@use "latest-blog-posts";
+@use "testimonials";
+@use "clients";
 @use "footer";
 @use "form";
 

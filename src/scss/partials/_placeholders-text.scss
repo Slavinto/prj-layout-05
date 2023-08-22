@@ -21,14 +21,24 @@
 // ==========================
 @mixin test {
     @include normal-text();
-    color: #c3dd4f;
-    text-align: center;
     font-size: 1.6rem;
-    font-weight: 600;
-    letter-spacing: 0.08rem;
-    text-transform: uppercase;
+    line-height: 2.24rem;
 }
 // ==========================
+
+@mixin article-header {
+    @include normal-text();
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.16rem;
+    text-transform: uppercase;
+}
+
+@mixin footer {
+    @include normal-text();
+    font-size: 1.6rem;
+    line-height: 2.24rem;
+}
 
 @mixin form-header {
     color: c.$dark;
@@ -36,14 +46,6 @@
     font-style: normal;
     font-weight: 600;
     line-height: 6.24rem;
-    text-transform: uppercase;
-}
-
-@mixin article-header {
-    @include normal-text();
-    font-size: 1.8rem;
-    font-weight: 400;
-    line-height: 2.16rem;
     text-transform: uppercase;
 }
 
@@ -63,6 +65,11 @@
     font-family: f.$source;
     font-size: 1.8rem;
     font-weight: 300;
+}
+
+@mixin form-text-light {
+    @include form-text-dark();
+    color: c.$white;
 }
 
 @mixin hero-header {

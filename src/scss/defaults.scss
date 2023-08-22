@@ -61,3 +61,7 @@ textarea,
 button {
     font-family: p.$fontByDefault;
 }
+
+section {
+    @include p.section-mobile;
+}

@@ -20,11 +20,7 @@
         width: 45.6rem;
 
         @include p.mq(tablet-wide, max) {
-            width: 71rem;
-        }
-
-        @include p.mq(phablet, max) {
-            width: 56rem;
+            width: 100%;
         }
     }
 
@@ -37,12 +33,9 @@
         justify-content: center;
 
         @include p.mq(tablet-wide, max) {
-            width: 71rem;
+            width: 100%;
         }
 
-        @include p.mq(phablet, max) {
-            width: 56rem;
-        }
         img {
             @include p.adaptive;
         }

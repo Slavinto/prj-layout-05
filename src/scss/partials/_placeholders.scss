@@ -42,6 +42,16 @@
 /*===========================================*/
 // Custom pattern styling classes
 /*===========================================*/
+
+@mixin section-mobile {
+    @include m.mq(tablet-wide, max) {
+        padding-left: v.$padding-general + rem !important;
+        padding-right: v.$padding-general + rem !important;
+        padding-top: 0 + rem !important;
+        padding-bottom: 0 + rem !important;
+    }
+}
+
 @mixin header-with-line {
     position: relative;
     width: 2.5rem;

@@ -4,6 +4,7 @@
     position: relative;
     overflow: visible;
     &__container-full {
+        padding: 4rem 0rem;
         $margin: calc((p.$wrapper-width - p.$main-content-container-rem) / 2);
         margin: 0 (-$margin + rem);
         @include p.background(p.$active);
