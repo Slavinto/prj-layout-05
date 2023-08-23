@@ -1,5 +1,6 @@
 @use "defaults";
 @use "header";
+@use "hero";
 @use "home";
 @use "mission";
 @use "values";
@@ -11,6 +12,8 @@
 @use "clients";
 @use "footer";
 @use "form";
+
+@use "services-list";
 
 main {
     display: flex;

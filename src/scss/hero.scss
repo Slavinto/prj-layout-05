@@ -1,0 +1,118 @@
+@use "partials" as p;
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+
+    @include p.mq(tablet, max) {
+        gap: 0rem;
+    }
+}
+
+.hero {
+    // .hero__article
+
+    &__article {
+        display: flex;
+        gap: 12.9rem;
+
+        @include p.mq(tablet-wide, max) {
+            flex-direction: column;
+            gap: 2rem;
+            position: relative;
+        }
+
+        @include p.mq(tablet, max) {
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    // .hero__contact
+
+    &__contact {
+        flex: 1 0 42.6rem;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 3.5rem;
+
+        padding-top: 2.5rem;
+
+        @include p.mq(tablet-wide, max) {
+            position: absolute;
+            padding: 8rem;
+            z-index: 2;
+            width: 80%;
+        }
+
+        @include p.mq(tablet, max) {
+            text-align: center;
+            align-items: center;
+            padding: 0rem;
+        }
+
+        @include p.mq(tablet-small, max) {
+            justify-content: center;
+        }
+    }
+
+    // .hero__header
+
+    &__header {
+        @include p.hero-header;
+    }
+
+    // .hero__header
+    &__header-br {
+        display: none;
+
+        @include p.mq(tablet, max) {
+            display: inline;
+        }
+    }
+
+    // .hero__text
+
+    &__text {
+        @include p.hero-text;
+    }
+
+    // .hero__cta
+
+    &__cta {
+        @include p.cta;
+        @include p.btn;
+    }
+
+    // .hero__overlay
+
+    &__overlay {
+        @include p.overlay;
+        display: none;
+        @include p.mq(tablet-wide, max) {
+            display: block;
+            position: absolute;
+            z-index: 1;
+        }
+    }
+
+    // .hero__image
+
+    &__image {
+        position: relative;
+        z-index: 0;
+        display: flex;
+        justify-content: center;
+        img {
+            position: relative;
+            z-index: 0;
+            width: 100%;
+
+            @include p.mq(tablet, max) {
+                @include p.adaptive;
+            }
+        }
+    }
+}

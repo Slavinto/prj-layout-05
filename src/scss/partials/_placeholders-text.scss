@@ -21,8 +21,12 @@
 // ==========================
 @mixin test {
     @include normal-text();
-    font-size: 1.6rem;
-    line-height: 2.24rem;
+    color: #fff;
+    font-family: Source Sans Pro;
+    font-size: 1.8rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 140%; /* 2.52rem */
 }
 // ==========================
 

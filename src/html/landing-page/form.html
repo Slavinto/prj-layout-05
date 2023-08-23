@@ -3,55 +3,73 @@
     <form action="" class="c-f__form">
         <div class="c-f__row">
             <div class="c-f__input">
-                <label for="first-name" class="c-f__label"> First Name* </label>
+                <label for="f-n" class="c-f__label"> First Name* </label>
                 <div class="c-f__input-container">
                     <div class="c-f__input-overlay"></div>
                     <input
+                        id="f-n"
                         type="text"
                         class="c-f__input-field"
                         name="first-name"
+                        autocomplete="given-name"
                     />
                 </div>
             </div>
             <div class="c-f__input">
-                <label for="last-name" class="c-f__label">Last Name*</label>
+                <label for="l-n" class="c-f__label">Last Name*</label>
                 <div class="c-f__input-container">
                     <div class="c-f__input-overlay"></div>
                     <input
+                        id="l-n"
                         type="text"
                         class="c-f__input-field"
                         name="last-name"
+                        autocomplete="family-name"
                     />
                 </div>
             </div>
         </div>
         <div class="c-f__row">
             <div class="c-f__input">
-                <label for="email" class="c-f__label">Email Address*</label>
+                <label for="e-m" class="c-f__label">Email Address*</label>
                 <div class="c-f__input-container">
                     <div class="c-f__input-overlay"></div>
-                    <input type="email" class="c-f__input-field" name="email" />
+                    <input
+                        id="e-m"
+                        type="email"
+                        class="c-f__input-field"
+                        name="email"
+                        autocomplete="email"
+                    />
                 </div>
             </div>
             <div class="c-f__input">
-                <label for="phone" class="c-f__label">Phone Number*</label>
+                <label for="p-h" class="c-f__label">Phone Number*</label>
                 <div class="c-f__input-container">
                     <div class="c-f__input-overlay"></div>
-                    <input type="tel" class="c-f__input-field" name="phone" />
+                    <input
+                        id="p-h"
+                        type="tel"
+                        class="c-f__input-field"
+                        name="phone"
+                        autocomplete="tel"
+                    />
                 </div>
             </div>
         </div>
         <div class="c-f__row">
             <div class="c-f__input">
-                <label for="details" class="c-f__label"> Message* </label>
+                <label for="d-e" class="c-f__label"> Message* </label>
                 <div class="c-f__input-container __area">
                     <div class="c-f__input-overlay"></div>
 
                     <textarea
+                        id="d-e"
                         class="c-f__input-area"
                         name="details"
                         rows="2"
                         cols="40"
+                        autocomplete="off"
                     >
                     </textarea>
                 </div>
