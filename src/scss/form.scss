@@ -9,6 +9,11 @@
     align-items: center;
     gap: 0.5rem;
 
+    &.__dark {
+        @include p.background(p.$dark);
+        padding: 0rem 0rem;
+    }
+
     @include p.mq(desktop, max) {
         border-radius: 3rem;
     }
@@ -25,6 +30,14 @@
     &__header {
         @include p.form-header;
         padding-bottom: 3rem;
+
+        &.__dark {
+            color: p.$white;
+        }
+
+        @include p.mq(tablet-wide, max) {
+            text-align: center;
+        }
     }
 
     // .c-f__form
@@ -63,6 +76,14 @@
         height: 5rem;
         border: 0.5px solid p.$dark;
         @include p.background(p.$active);
+        @include p.text-light;
+        color: p.$dark;
+
+        &.__dark {
+            color: p.$white;
+            border: 0.5px solid p.$white;
+            @include p.background(p.$formOverlay2);
+        }
     }
 
     // .c-f__label
@@ -70,6 +91,10 @@
     &__label {
         @include p.form-text-dark;
         padding-bottom: 0.5rem;
+
+        &.__dark {
+            color: p.$white;
+        }
     }
 
     // .c-f__input-container
@@ -89,6 +114,10 @@
 
     &__input-overlay {
         @include p.overlay(p.$formOverlay);
+
+        &.__dark {
+            @include p.overlay(p.$formOverlay2);
+        }
     }
 
     // .c-f__input-area
@@ -98,8 +127,16 @@
         width: 62.5rem;
         height: 14.5rem;
         border: 0.5px solid p.$dark;
-        @include p.background(p.$active);
         resize: none;
+        @include p.background(p.$active);
+        @include p.text-light;
+        color: p.$dark;
+
+        &.__dark {
+            border: 0.5px solid p.$white;
+            color: p.$white;
+            @include p.background(p.$dark);
+        }
 
         &::before {
             content: "";
@@ -107,7 +144,9 @@
             z-index: 1;
             width: 10rem;
             height: 10rem;
-            // @include p.background(p.$formOverlay);
+            &.__dark {
+                @include p.overlay(p.$formOverlay2);
+            }
         }
 
         @include p.mq(tablet-wide, max) {
@@ -123,7 +162,12 @@
         @include p.btn;
         @include p.background(p.$dark);
         color: p.$active;
-        // font-family: p.$fontByDefault;
+
+        &.__dark {
+            @include p.background(p.$active);
+            color: p.$dark;
+            border: 0.5px solid p.$white;
+        }
     }
 }
 .arrow {

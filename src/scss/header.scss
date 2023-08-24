@@ -188,7 +188,7 @@
         &:hover,
         &:active {
             color: p.$active;
-            box-shadow: 0rem 2.8rem p.$dark2, 0rem 3.1rem p.$active;
+            box-shadow: 0rem 2.8rem 0rem 0.2rem p.$dark2, 0rem 3.1rem p.$active;
         }
     }
 }

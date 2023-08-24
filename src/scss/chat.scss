@@ -3,10 +3,22 @@
 .chat {
     position: relative;
     overflow: visible;
+
+    &-dark {
+        &__container-full {
+            padding: 4rem 0rem;
+            margin: 0 (p.$margin-negative);
+            @include p.background(p.$dark);
+        }
+
+        &__form {
+            @include p.centered;
+        }
+    }
+
     &__container-full {
         padding: 4rem 0rem;
-        $margin: calc((p.$wrapper-width - p.$main-content-container-rem) / 2);
-        margin: 0 (-$margin + rem);
+        margin: 0 (p.$margin-negative);
         @include p.background(p.$active);
     }
 

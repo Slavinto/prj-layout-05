@@ -11,6 +11,10 @@ $wrapper-width: 144;
 
 $padding-general: 4;
 
+// for a full-width container inside a fixed width container
+$margin-negative: -(calc(($wrapper-width - $main-content-container-rem) / 2) +
+            rem);
+
 /*===========================*/
 $headerBg: c.$invisibleColor;
 $footerBg: c.$invisibleColor;

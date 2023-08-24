@@ -8,6 +8,10 @@ $right-col-width: 45.6rem;
     flex-direction: column;
     gap: 15rem;
 
+    @include p.mq(tablet, max) {
+        gap: 7.5rem;
+    }
+
     // .services-list__header-container
 
     &__header-container {
@@ -15,6 +19,12 @@ $right-col-width: 45.6rem;
         flex-direction: column;
         gap: 5rem;
         max-width: $left-col-width;
+
+        @include p.mq(tablet, max) {
+            gap: 2.5rem;
+            max-width: 100%;
+            text-align: center;
+        }
     }
 
     // .services-list__title
@@ -44,6 +54,16 @@ $right-col-width: 45.6rem;
     &__service {
         display: flex;
         gap: 14.8rem;
+
+        @include p.mq(tablet-wide, max) {
+            gap: 4rem;
+        }
+
+        @include p.mq(tablet, max) {
+            flex-direction: column;
+            align-items: center;
+            gap: 5rem;
+        }
     }
 }
 .service {
@@ -55,6 +75,11 @@ $right-col-width: 45.6rem;
         img {
             @include p.adaptive;
         }
+
+        @include p.mq(tablet, max) {
+            //
+            max-width: 100%;
+        }
     }
 
     // .service__article
@@ -64,26 +89,33 @@ $right-col-width: 45.6rem;
         flex-direction: column;
         align-self: center;
         gap: 0rem;
+        transition: all 0.6s ease-out;
+        transform: translateY(0rem);
+        max-width: $right-col-width;
+
         &-heading {
             height: 5rem;
-            border-bottom: 0;
+            box-shadow: 0rem 0rem 0rem 0rem p.$dark,
+                0rem 0rem 0rem 0rem p.$active;
+            transition: all 0.3s ease-out;
         }
-        max-width: $right-col-width;
-        transition: all 0.3s;
+
+        &:hover .service__article-heading {
+            box-shadow: 0.2rem 0.1rem 0rem 0.2rem p.$dark,
+                0rem 0.6rem 0rem 0rem p.$active;
+        }
+
         &:link,
         &:visited {
         }
-        &:hover {
-            ~ .service__article-heading {
-                border-bottom: 2px solid p.$white;
-            }
-        }
+        &:hover,
         &:active {
-            gap: 10rem;
-            // ~ &-heading {
-            //     border-bottom: 2px solid p.$white;
-            // }
-            // transform: translateY(-6.4rem);
+            gap: 5rem;
+            transform: translateY(-5rem);
+        }
+
+        @include p.mq(tablet, max) {
+            max-width: 100%;
         }
     }
 
@@ -99,5 +131,10 @@ $right-col-width: 45.6rem;
     &__article-text {
         @include p.text-light;
         font-family: p.$source;
+
+        @include p.mq(tablet, max) {
+            //
+            text-align: center;
+        }
     }
 }
