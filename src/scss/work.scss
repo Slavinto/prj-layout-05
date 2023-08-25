@@ -40,11 +40,41 @@
     // .work__foto-container
 
     &__foto-container {
+        position: relative;
         max-width: 56rem;
+
+        &:link,
+        &:visited {
+        }
+        &:hover .work__expand-icon {
+            opacity: 1;
+        }
+        &:hover .work__foto-overlay {
+            opacity: 1;
+        }
+        &:active {
+        }
 
         @include p.mq(tablet-wide, max) {
             max-width: 100%;
         }
+    }
+
+    // .work__foto-container
+
+    &__foto-overlay {
+        transition: opacity 0.3s ease-out;
+        opacity: 0;
+        @include p.overlay;
+    }
+
+    // .work__expand-icon
+
+    &__expand-icon {
+        transition: opacity 0.3s ease-out;
+        opacity: 0;
+        @include p.center-absolute;
+        z-index: 1;
     }
 
     // .work__image
@@ -72,5 +102,11 @@
         @include p.btn;
         @include p.cta;
         align-self: flex-start;
+    }
+}
+
+.work-list {
+    .work_header {
+        @include p.hero-header;
     }
 }

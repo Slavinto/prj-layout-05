@@ -1,0 +1,58 @@
+@use "partials" as p;
+
+.work-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15rem;
+    padding-bottom: 10rem;
+
+    // .work-details__article
+
+    &__article {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+        // width: 101.6rem;
+    }
+
+    // .work-details__title
+
+    &__title {
+        @include p.hero-header;
+    }
+
+    // .work-details__text
+
+    &__text {
+        @include p.hero-text;
+    }
+
+    // .work-details__image-container
+
+    &__image-container {
+        width: 100%;
+    }
+
+    // .work-details__image
+
+    &__image {
+        @include p.adaptive;
+    }
+
+    // .work-details__content
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10rem;
+    }
+
+    // .work-details__cta
+
+    &__cta {
+        @include p.cta;
+        @include p.btn;
+        align-self: center;
+    }
+}
