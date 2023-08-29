@@ -1,0 +1,45 @@
+@use "partials" as p;
+
+.blog-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+}
+.b-h {
+    // .b-h__title-container
+
+    &__title-container {
+        max-width: 49.1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+    }
+
+    // .b-h__title
+
+    &__title {
+        @include p.hero-header;
+    }
+
+    // .b-h__title-text
+
+    &__title-text {
+        @include p.hero-text;
+    }
+
+    // .b-h__search-container
+
+    .c-f__input-container.b-h__search-container {
+        width: 100%;
+    }
+
+    // .b-h__search
+
+    &__search {
+        width: 100%;
+    }
+}
+
+#blog-search {
+    width: 100%;
+}

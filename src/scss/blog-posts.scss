@@ -1,0 +1,84 @@
+@use "partials" as p;
+
+.l-p.__blog {
+    padding: 7rem 0rem;
+}
+
+.l-p__header-container.__blog {
+    align-self: flex-start;
+    transform: rotate(-90deg) translateX(-5rem);
+
+    @include p.mq(tablet-wide, max) {
+        align-self: center;
+        transform: none;
+    }
+}
+
+.blog-posts-container {
+    display: flex;
+    flex-direction: column;
+
+    @include p.mq(tablet-wide, max) {
+        gap: 8rem;
+    }
+}
+
+.l-p {
+    // .l-p__pagination
+
+    &__pagination {
+        display: flex;
+        align-self: flex-end;
+        align-items: center;
+        gap: 1.5rem;
+
+        .__active {
+            color: p.$active;
+        }
+
+        @include p.mq(tablet-wide, max) {
+            align-self: center;
+        }
+    }
+
+    // .l-p__pagination-arrow-container
+
+    &__pagination-arrow-container {
+        .__left {
+        }
+        .__right {
+            // transform: rotate(180deg);
+        }
+    }
+
+    // .l-p__pagination-arrow-icon
+
+    &__pagination-arrow-icon {
+    }
+
+    // .l-p__pagination-pages
+
+    &__pagination-pages {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    // .l-p__pagination-number
+
+    &__pagination-number {
+        @include p.text-light;
+        font-family: p.$source;
+        &.__active {
+            font-weight: 600;
+        }
+    }
+
+    // .l-p__pagination-separator
+
+    &__pagination-separator {
+        width: 5.9rem;
+        height: 0.1rem;
+        background-color: p.$active;
+    }
+}
