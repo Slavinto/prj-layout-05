@@ -1,0 +1,61 @@
+@use "partials" as p;
+
+.blog-inner {
+}
+.b-i {
+    display: flex;
+    flex-direction: column;
+    gap: 15rem;
+
+    @include p.mq(tablet-wide, max) {
+        gap: 5rem;
+    }
+
+    // .b-i__article
+
+    &__article {
+        display: flex;
+        flex-direction: column;
+        gap: 8rem;
+    }
+
+    // .b-i__article-heading-container
+
+    &__article-heading-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    // .b-i__article-header
+
+    &__article-header {
+        @include p.hero-header;
+        max-width: 85.2rem;
+    }
+
+    // .b-i__article-author-date
+
+    &__article-author-date {
+        @include p.hero-text;
+        padding-bottom: 1rem;
+    }
+
+    // .b-i__article-text
+
+    &__article-text {
+        @include p.hero-text;
+    }
+
+    // .b-i__article-image-container
+
+    &__article-image-container {
+        max-width: 100%;
+    }
+
+    // .b-i__article-image
+
+    &__article-image {
+        @include p.adaptive;
+    }
+}

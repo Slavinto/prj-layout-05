@@ -55,6 +55,10 @@
         gap: 1.5rem;
         justify-content: center;
 
+        &.__blog {
+            display: block;
+        }
+
         @include p.mq(tablet-wide, max) {
             flex-direction: column;
             gap: 2rem;
@@ -93,7 +97,7 @@
         padding-bottom: 0.5rem;
 
         &.__dark {
-            color: p.$white;
+            @include p.form-text-light;
         }
     }
 
@@ -107,6 +111,10 @@
         &.__area {
             width: 100%;
             height: 100%;
+        }
+
+        &.__blog {
+            width: 100%;
         }
     }
 
@@ -136,6 +144,10 @@
             border: 0.5px solid p.$white;
             color: p.$white;
             @include p.background(p.$dark);
+        }
+
+        &.__blog {
+            width: 100%;
         }
 
         &::before {

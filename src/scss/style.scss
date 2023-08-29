@@ -1,5 +1,6 @@
 @use "defaults";
 @use "blog-header";
+@use "blog-post-inner";
 @use "blog-posts";
 @use "header";
 @use "hero";
@@ -15,7 +16,6 @@
 @use "clients";
 @use "footer";
 @use "form";
-
 @use "services-list";
 
 main {
