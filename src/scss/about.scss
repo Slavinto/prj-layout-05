@@ -1,0 +1,110 @@
+@use "partials" as p;
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 15rem;
+
+    // .about__article-br1
+
+    &__article-br1 {
+        display: none;
+
+        @include p.mq(tablet-wide, max) {
+            display: inline;
+        }
+    }
+
+    // .about__article-top
+
+    &__article-top {
+        display: flex;
+        gap: 21.7rem;
+
+        position: relative;
+
+        @include p.mq(desktop, max) {
+            gap: 11.7rem;
+        }
+
+        @include p.mq(tablet-wide, max) {
+            flex-direction: column;
+            max-width: 100%;
+            align-items: center;
+            overflow: hidden;
+        }
+    }
+
+    // .about__article-side-text
+
+    &__article-side-text {
+        max-width: 42.8rem;
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+        @include p.mq(tablet-wide, max) {
+            padding: 4rem;
+            max-width: 100%;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+    }
+
+    // .about__article-heading
+
+    &__article-heading {
+        @include p.hero-header;
+    }
+
+    // .about__article-text
+
+    &__article-text {
+        @include p.hero-text;
+    }
+
+    // .about__article-image-container
+
+    &__article-image-container {
+        max-width: 100%;
+
+        &.__top {
+            @include p.mq(tablet-wide, max) {
+                @include p.center-absolute;
+                z-index: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    // .about__article-image-overlay
+
+    &__article-image-overlay {
+        @include p.overlay;
+        display: none;
+
+        @include p.mq(tablet-wide, max) {
+            display: block;
+        }
+    }
+
+    // .about__article-image
+
+    &__article-image {
+        @include p.adaptive;
+    }
+
+    // .about__article-bottom
+
+    &__article-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 5rem;
+
+        @include p.mq(tablet-wide, max) {
+            text-align: center;
+        }
+    }
+}
