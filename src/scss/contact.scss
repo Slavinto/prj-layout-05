@@ -1,0 +1,46 @@
+@use "partials" as p;
+.chat-dark {
+    &.__contact {
+    }
+
+    // .chat-dark__container-full
+
+    &__container-full {
+        &.__contact {
+            padding: 0rem;
+        }
+    }
+
+    // .chat-dark__form
+
+    &__form {
+        &.__contact {
+        }
+    }
+}
+.work-chat {
+    &.__contact {
+        padding: 0rem;
+    }
+}
+.contact {
+    // .contact__container
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 10rem;
+    }
+
+    // .contact__image-container
+
+    &__image-container {
+        max-width: 100%;
+    }
+
+    // .contact__image
+
+    &__image {
+        @include p.adaptive;
+    }
+}
